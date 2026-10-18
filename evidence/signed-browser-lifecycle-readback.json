@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-18T22:33:42.823Z",
+  "verification": "independent post-run GenLayerJS 1.1.8 Studionet read",
+  "app": "ParcelCourt",
+  "contract": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+  "chainId": 61999,
+  "caseId": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+  "receiptCount": 10,
+  "receipts": [
+    {
+      "action": "create_case",
+      "hash": "0xe2772218d3002b1ea60d69058bd95122f9bd7fe10510046eafd84acd02a1091d",
+      "phase": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "successfulLeaderExecutions": 2,
+      "validatorCount": 4
+    },
+    {
+      "action": "consent",
+      "hash": "0x3f7ffa2931f0c18ca37b83a7c73b90e46930a62727e03d40852502183ec19bb7",
+      "phase": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "successfulLeaderExecutions": 2,
+      "validatorCount": 4
+    },
+    {
+      "action": "freeze",
+      "hash": "0x3d197d88cd568ed98d93583620edb7eaf4c0dcf70aaef60175dfecd6e108c148",
+      "phase": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "successfulLeaderExecutions": 2,
+      "validatorCount": 4
+    },
+    {
+      "action": "submit_evidence",
+      "hash": "0xdae46aed9bab5ce20ba7462b35f625f721ef016f15090122615d499655d6ff7c",
+      "phase": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "successfulLeaderExecutions": 1,
+      "validatorCount": 4
+    },
+    {
+      "action": "attest_evidence",
+      "hash": "0xfaad0e96f93291ecaa0dcee90278949eece72684d221e5a1d9d18abe304840bd",
+      "phase": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "successfulLeaderExecutions": 2,
+      "validatorCount": 4
+    },
+    {
+      "action": "adjudicate",
+      "hash": "0x245a6dbaf85e36ad808a228c4a9a316f060a603ef4d4a684f8e4699b6371cdb4",
+      "phase": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "successfulLeaderExecutions": 1,
+      "validatorCount": 4
+    },
+    {
+      "action": "challenge",
+      "hash": "0x5c4d50ca055fc28d41310f39b3dd2fb4082f1eb75c1022edeeddb0c128182c32",
+      "phase": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "successfulLeaderExecutions": 1,
+      "validatorCount": 4
+    },
+    {
+      "action": "challenge",
+      "hash": "0xfaa2befba73a8b1d620613cc66fc28ecf32460cc200f619651ca22795352ba75",
+      "phase": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "successfulLeaderExecutions": 2,
+      "validatorCount": 4
+    },
+    {
+      "action": "adjudicate",
+      "hash": "0x37965447bfad46a4ae14be9dfac0e318a4f17f7060cdfc60bf80a186da906bcc",
+      "phase": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "successfulLeaderExecutions": 2,
+      "validatorCount": 4
+    },
+    {
+      "action": "finalize_case",
+      "hash": "0x734a72f35505684b919b6833d42008834885369e3c04ed61bcdffaa73dd6a408",
+      "phase": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "successfulLeaderExecutions": 2,
+      "validatorCount": 4
+    }
+  ],
+  "canonical": {
+    "status": "FINALIZED",
+    "verdict": "UNRESOLVED",
+    "round": 2,
+    "challengeCount": 2,
+    "historyEntries": 2,
+    "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+    "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+    "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+    "finalizedAt": 1792362719
+  },
+  "syntheticQualificationOnly": true,
+  "privateKeysPersisted": false
+}

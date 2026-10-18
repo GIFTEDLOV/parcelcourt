@@ -1,4 +1,4 @@
-# GenLayer submission dossier — ParcelCourt
+# GenLayer submission dossier ? ParcelCourt
 
 ## Project name
 
@@ -6,11 +6,11 @@ ParcelCourt
 
 ## Short description
 
-Review delivery claims against a frozen handoff promise, attested evidence, two-party challenges and semantic consensus.
+Review delivery claims against a frozen handoff promise, attested evidence, two-party challenges and independent semantic consensus.
 
 ## Detailed description
 
-ParcelCourt is a full GenLayer application for a delivery claim lifecycle. Creator and recipient consent before freezing the handoff promise; a separate attestor wallet commits to the evidence digest and source reference. The browser reads a canonical paged case registry and hash-linked semantic history and supports case actions, challenges, re-adjudication and finalization.
+ParcelCourt supports a delivery-claim lifecycle from consent and frozen promise through evidence submission, a distinct attestor, semantic adjudication, two-party challenges, second-round deliberation and finalization. The production app reads paged canonical case records and hash-linked history from Studionet, and provides wallet-validated signing and post-transaction receipt/state reconciliation.
 
 ## Problem solved
 
@@ -18,50 +18,62 @@ Delivery disputes depend on natural-language handoff promises and evidence that 
 
 ## Why this requires a GenLayer Intelligent Contract
 
-Validators independently evaluate delivery claims against the exact frozen promise and evidence. A conventional deterministic workflow cannot decide whether a handoff record substantively satisfies that promise.
+Validators independently assess whether delivery evidence substantiates the exact frozen handoff promise and named recipient. Deterministic code alone cannot determine those semantic facts.
 
 ## Genuine semantic-consensus behavior
 
-Validators independently classify handoff_matches_promise, authorized_recipient_supported and evidence_sufficient. Strict vector validation and a bounded deterministic verdict prevent model output from selecting actors, parameters, deadlines or money. The second round includes challenge text; one party cannot take the other party’s response slot.
+Leader and validators independently classify handoff_matches_promise, authorized_recipient_supported and evidence_sufficient. The strict vector and bounded deterministic verdict are validated; the second round incorporates both parties' challenge text; disagreement cannot become approval or alter parameters, actors, deadlines or rules.
 
-## GitHub repository URL
+The leader and validators independently execute the semantic evaluation. The result is schema-validated and contract code alone maps it to permitted outcomes. Evidence and challenge text are untrusted input. Disagreement and invalid output cannot silently become approval. Challenge periods and finalization use contract transaction time.
 
-[https://github.com/GIFTEDLOV/parcelcourt](https://github.com/GIFTEDLOV/parcelcourt)
+## GitHub repository
 
-## Production app URL
+https://github.com/GIFTEDLOV/parcelcourt
+
+## Production app
 
 https://parcelcourt-genlayer.vercel.app
 
 ## Studionet deployment
 
-- Chain 61999, RPC `https://studio.genlayer.com/api`
+- Network: GenLayer Studionet
+- Chain ID: `61999`
+- Canonical RPC: `https://studio.genlayer.com/api`
 - Contract: [0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72](https://explorer-studio.genlayer.com/address/0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72)
-- Explorer: [https://explorer-studio.genlayer.com/address/0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72](https://explorer-studio.genlayer.com/address/0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72)
-- Verified source SHA-256: `302a0db3f6eca2266677af095ab98a80765221f890f3fd0d028bfaf88de7e224`
+- Verified deployed source SHA-256: `302a0db3f6eca2266677af095ab98a80765221f890f3fd0d028bfaf88de7e224`
 - ABI schema SHA-256: `cef0fd7d95e3e616bc62644966e692e28ec805bf1fa738043a0e75e71dc043a4`
 
-## Live demonstration evidence
+## Live demonstration and evidence
 
-- Case `GLV4-parcelcourt-39138804500` finalized at round 2; recorded verdict **UNRESOLVED**.
-- First and second semantic transaction hashes and finalization hash are preserved in `evidence/parcelcourt-live.json`.
-- [GitHub workflow run 39138804500](https://github.com/GIFTEDLOV/driftproof/actions/runs/39138804500); exact transaction explorer links are included in the source artifact.
-- Qualification source records are synthetic and labelled; this proves GenLayer behavior, not a real-world issuer’s identity or the truth of a physical record.
+- Historic case: `GLV4-parcelcourt-39138804500`; status `FINALIZED`; terminal verdict **UNRESOLVED**.
+- Qualification workflow: [run 39138804500](https://github.com/GIFTEDLOV/driftproof/actions/runs/39138804500).
+- Deployed contract and source parity evidence: `evidence/live-verification.json`.
+- Production deployment: `dpl_8M1N7ixBvj4uFS3Sqvav43xWaEnN`; https://parcelcourt-genlayer-curd0goju-kolofahkelvin16-6437s-projects.vercel.app; production alias https://parcelcourt-genlayer.vercel.app.
+- Signed Chromium production wallet verification: `evidence/browser-wallet-e2e.json` with real signed transaction, GenVM receipt and canonical state readback.
+- Full synthetic lifecycle: `BROWSER-LIFECYCLE-1792362304421-ParcelCourt`, terminal **UNRESOLVED**. Transaction and state evidence: `evidence/signed-browser-lifecycle.json`, `evidence/signed-browser-lifecycle-readback.json`.
+- Production registry verification: passed; `evidence/signed-browser-registry.json` verifies exact case search, terminal state, challenges and hash-linked history.
 
 ## Security and qualification summary
 
-The deployed V4 source is byte-identical to the repository source; the deployed ABI matches the locally generated schema. The local regression suite covers role separation, state transitions, source hashes, strict semantic schemas, validator disagreement, prompt injection, challenge fairness, deadlines, duplicates/replay, numeric bounds, address-serialization compatibility and history integrity. Live workflow evidence records transaction status, GenVM execution and canonical readback.
+Automated adversarial, state-machine, schema, address-compatibility, history-integrity and wallet E2E checks passed. A genuine Chromium wallet signed transaction was reconciled against successful GenVM execution and canonical state. The synthetic full lifecycle finalized UNRESOLVED after both parties challenged. Production registry search/detail verified a two-challenge, two-entry hash-linked history. The public deployment uses the verified V4 contract.
 
-The current production UI still serves an older read-only build; `RELEASE_QUALIFIED=false`. A real funded ephemeral-signer E2E and a new production deployment are outstanding. This project is not yet fully submission-ready.
+- Exact-main CI: [workflow run 39173930011](https://github.com/GIFTEDLOV/parcelcourt/actions/runs/39173930011) passed for the then-current main commit. Release-preparation exact-head CI and version tag CI will be linked on the repository release.
+- CI covers Python tests, GenVM lint, ABI/schema, source provenance, security analysis and app SDK/build/browser tests where applicable.
+- No unresolved Critical or High issue was identified in the release audit.
+- The historic 39138804500 workbench is not represented as a four-project PASS: NoticeClock was BLOCKED; the other three project artifacts individually report PASS. NoticeClock's later case 39142055216 passed its lifecycle, with terminal verdict INCONCLUSIVE.
 
 ## Instructions for reviewers
 
-1. Inspect `contracts/parcelcourt.py` and verify its hash and ABI using `npm run verify:live`.
-2. Run `python -m pytest -q`, `python -m genvm_linter.cli lint contracts/parcelcourt.py`, `npm ci`, and `npm run verify:live`.
-3. Read `evidence/parcelcourt-live.json`; preserve the terminal verdict shown above.
-4. For apps, open the production URL read-only; wallet signing is deliberately disabled until its real signed-browser qualification completes.
+1. Inspect `contracts/parcelcourt.py` and `release.json`.
+2. Verify the deployed source and ABI against the hashes above using the checked-in read-only verifier.
+3. Review the case and receipt evidence under `evidence/`; a FINALIZED label is not treated as proof without successful GenVM execution and canonical state readback.
+4. Open https://parcelcourt-genlayer.vercel.app on Studionet chain 61999, connect a test wallet, and use the registry to inspect actual on-chain case state. If Studionet reports its rate limit, wait for its quota window and retry; the app intentionally shows an error rather than mock cases.
+5. Treat all qualification cases and source records as synthetic test inputs; do not infer real-world events.
 
 ## Known limitations and external trust assumptions
 
-Attestor signing proves agreed-wallet control, not carrier identity, physical delivery or document authenticity. No external carrier identity oracle or asset settlement exists. Live qualification records were synthetic. The updated repository frontend has not been deployed to the public URL.
+Qualification cases and delivery evidence are synthetic. An attestor signature proves control of the agreed wallet, not carrier identity, physical delivery, or document authenticity. There is no carrier identity oracle, insurance escrow, or settlement. Studionet's public RPC imposed a 500-request/hour rate limit during the ShiftFair registry read; the app surfaces RPC failures without substituting synthetic data. Cases are append-only and not pruned.
 
-Public case creation has no global lifetime cap. Pagination limits each page to 100 records, but total storage and the legacy `get_case_ids()` view can grow. Semantic execution depends on available non-deterministic model services and validator execution; disagreement is not approval. Invoice/minute outputs do not settle assets.
+## Portal status
+
+The submission fields and evidence package are **prepared for immediate Portal entry**. The final Portal submission has **not** been made. It requires an authenticated Builder Portal session and explicit final-submit authorization; no claim of submission or steward approval is made.

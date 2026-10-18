@@ -1,0 +1,1156 @@
+{
+  "schemaVersion": 1,
+  "app": "ParcelCourt",
+  "url": "https://parcelcourt-genlayer.vercel.app",
+  "contract": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+  "chainId": 61999,
+  "caseId": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+  "syntheticQualificationOnly": true,
+  "signerAddresses": [
+    "0x3a2FD329306634E88cd88366CFCd81dC88007e5B",
+    "0xf17DFc471a801Fa40691099eEDe98321Ef6B0134",
+    "0xb62945c78166774162447B057C766213982db4d6"
+  ],
+  "privateKeysPersisted": false,
+  "transactions": [
+    {
+      "action": "create_case",
+      "signer": "0x3a2FD329306634E88cd88366CFCd81dC88007e5B",
+      "expectedHash": "0xe2772218d3002b1ea60d69058bd95122f9bd7fe10510046eafd84acd02a1091d",
+      "phase": "VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE",
+      "to": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "contractRecipient": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+      "nonce": 0,
+      "calldataSha256": "f0318014f8cd4932e587729f2cd24ce7e0b748767d623adf446c4ec1c09cd64d",
+      "hash": "0xe2772218d3002b1ea60d69058bd95122f9bd7fe10510046eafd84acd02a1091d",
+      "hashMatchesSignedPayload": true,
+      "uiEvidence": {
+        "action": "create_case",
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "independentValidators": 4,
+        "canonicalState": {
+          "attestation_hash": "",
+          "attested": false,
+          "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+          "challenge_hash": "",
+          "challenge_text": "",
+          "challenges": [],
+          "consented": false,
+          "created": 1792362310,
+          "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+          "deadline": 1792448708,
+          "evidence": "",
+          "evidence_hash": "",
+          "finalized_at": 0,
+          "handoff_at": 1792448708,
+          "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+          "last_at": 0,
+          "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "result": "",
+          "round": 0,
+          "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+          "source_ref": "",
+          "status": "DRAFT"
+        },
+        "historyEntries": 0
+      },
+      "receipt": {
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "postQuorumCancellations": 0,
+        "validatorCount": 4,
+        "leaderExecutionResults": [
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          },
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          }
+        ],
+        "validatorReceiptSha256": "82b46e215fdda5666e55a390b78e3b9c82e72ce78afe68b8191c298108e8692e"
+      }
+    },
+    {
+      "action": "consent",
+      "signer": "0xf17DFc471a801Fa40691099eEDe98321Ef6B0134",
+      "expectedHash": "0x3f7ffa2931f0c18ca37b83a7c73b90e46930a62727e03d40852502183ec19bb7",
+      "phase": "VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE",
+      "to": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "contractRecipient": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+      "nonce": 0,
+      "calldataSha256": "2cfb3ac6e559d43443272b1dfe6e75610f030cf6b1dc88781988ce19a66cc5c8",
+      "hash": "0x3f7ffa2931f0c18ca37b83a7c73b90e46930a62727e03d40852502183ec19bb7",
+      "hashMatchesSignedPayload": true,
+      "uiEvidence": {
+        "action": "consent",
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "independentValidators": 4,
+        "canonicalState": {
+          "attestation_hash": "",
+          "attested": false,
+          "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+          "challenge_hash": "",
+          "challenge_text": "",
+          "challenges": [],
+          "consented": true,
+          "created": 1792362310,
+          "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+          "deadline": 1792448708,
+          "evidence": "",
+          "evidence_hash": "",
+          "finalized_at": 0,
+          "handoff_at": 1792448708,
+          "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+          "last_at": 0,
+          "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "result": "",
+          "round": 0,
+          "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+          "source_ref": "",
+          "status": "DRAFT"
+        },
+        "historyEntries": 0
+      },
+      "receipt": {
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "postQuorumCancellations": 0,
+        "validatorCount": 4,
+        "leaderExecutionResults": [
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          },
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          }
+        ],
+        "validatorReceiptSha256": "7c06195b1c550353792147caeb4aa40ca8354edd03180d9fb2ad69d6e0fb4938"
+      }
+    },
+    {
+      "action": "freeze",
+      "signer": "0x3a2FD329306634E88cd88366CFCd81dC88007e5B",
+      "expectedHash": "0x3d197d88cd568ed98d93583620edb7eaf4c0dcf70aaef60175dfecd6e108c148",
+      "phase": "VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE",
+      "to": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "contractRecipient": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+      "nonce": 1,
+      "calldataSha256": "4ee73b418746288596a2c622bf060c311ca5fa4b3c4a035bbc011b4e8659abc4",
+      "hash": "0x3d197d88cd568ed98d93583620edb7eaf4c0dcf70aaef60175dfecd6e108c148",
+      "hashMatchesSignedPayload": true,
+      "uiEvidence": {
+        "action": "freeze",
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "independentValidators": 4,
+        "canonicalState": {
+          "attestation_hash": "",
+          "attested": false,
+          "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+          "challenge_hash": "",
+          "challenge_text": "",
+          "challenges": [],
+          "consented": true,
+          "created": 1792362310,
+          "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+          "deadline": 1792448708,
+          "evidence": "",
+          "evidence_hash": "",
+          "finalized_at": 0,
+          "handoff_at": 1792448708,
+          "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+          "last_at": 0,
+          "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "result": "",
+          "round": 0,
+          "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+          "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+          "source_ref": "",
+          "status": "FROZEN"
+        },
+        "historyEntries": 0
+      },
+      "receipt": {
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "postQuorumCancellations": 0,
+        "validatorCount": 4,
+        "leaderExecutionResults": [
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          },
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          }
+        ],
+        "validatorReceiptSha256": "82d27a865f9eafcf5c77dc60415bd9688219a0e25f9894dfff5c272685968f52"
+      }
+    },
+    {
+      "action": "submit_evidence",
+      "signer": "0xf17DFc471a801Fa40691099eEDe98321Ef6B0134",
+      "expectedHash": "0xdae46aed9bab5ce20ba7462b35f625f721ef016f15090122615d499655d6ff7c",
+      "phase": "VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE",
+      "to": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "contractRecipient": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+      "nonce": 1,
+      "calldataSha256": "ae4dd7bb880aabe94080360866ac06f704c2506635939c0c28bdae17283332e7",
+      "hash": "0xdae46aed9bab5ce20ba7462b35f625f721ef016f15090122615d499655d6ff7c",
+      "hashMatchesSignedPayload": true,
+      "uiEvidence": {
+        "action": "submit_evidence",
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "independentValidators": 4,
+        "canonicalState": {
+          "attestation_hash": "",
+          "attested": false,
+          "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+          "challenge_hash": "",
+          "challenge_text": "",
+          "challenges": [],
+          "consented": true,
+          "created": 1792362310,
+          "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+          "deadline": 1792448708,
+          "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+          "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+          "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "finalized_at": 0,
+          "handoff_at": 1792448708,
+          "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+          "last_at": 0,
+          "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "result": "",
+          "round": 0,
+          "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+          "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+          "source_ref": "",
+          "status": "EVIDENCE_LOCKED"
+        },
+        "historyEntries": 0
+      },
+      "receipt": {
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 1,
+        "postQuorumCancellations": 1,
+        "validatorCount": 4,
+        "leaderExecutionResults": [
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          },
+          {
+            "execution_result": "ERROR",
+            "canceledAfterQuorum": true
+          }
+        ],
+        "validatorReceiptSha256": "ce25356a3c7495ace8f784e108962c1cbea95f3e0e7dcab6948fa2b04199ae96"
+      }
+    },
+    {
+      "action": "attest_evidence",
+      "signer": "0xb62945c78166774162447B057C766213982db4d6",
+      "expectedHash": "0xfaad0e96f93291ecaa0dcee90278949eece72684d221e5a1d9d18abe304840bd",
+      "phase": "VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE",
+      "to": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "contractRecipient": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+      "nonce": 0,
+      "calldataSha256": "06417a1f96d7f803e280079ea48d76495dbea884ba4a8a8e30eb10322c4fe3c8",
+      "hash": "0xfaad0e96f93291ecaa0dcee90278949eece72684d221e5a1d9d18abe304840bd",
+      "hashMatchesSignedPayload": true,
+      "uiEvidence": {
+        "action": "attest_evidence",
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "independentValidators": 4,
+        "canonicalState": {
+          "attestation_hash": "de6132a56e3ef81b388b555a2793b9e3e80af013b6b8f23944b3d47ae72ec14b",
+          "attested": true,
+          "attested_at": 1792362483,
+          "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+          "challenge_hash": "",
+          "challenge_text": "",
+          "challenges": [],
+          "consented": true,
+          "created": 1792362310,
+          "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+          "deadline": 1792448708,
+          "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+          "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+          "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "finalized_at": 0,
+          "handoff_at": 1792448708,
+          "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+          "last_at": 0,
+          "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "result": "",
+          "round": 0,
+          "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+          "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+          "source_ref": "SYNTHETIC-QUALIFICATION-ONLY",
+          "status": "ATTESTED"
+        },
+        "historyEntries": 0
+      },
+      "receipt": {
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "postQuorumCancellations": 0,
+        "validatorCount": 4,
+        "leaderExecutionResults": [
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          },
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          }
+        ],
+        "validatorReceiptSha256": "ceb4cc67384e472552ed686fffb5c73ebd787d3829bb1056accea33bd70607fb"
+      }
+    },
+    {
+      "action": "adjudicate",
+      "signer": "0x3a2FD329306634E88cd88366CFCd81dC88007e5B",
+      "expectedHash": "0x245a6dbaf85e36ad808a228c4a9a316f060a603ef4d4a684f8e4699b6371cdb4",
+      "phase": "VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE",
+      "to": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "contractRecipient": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+      "nonce": 2,
+      "calldataSha256": "39d9b5bf3457c36acd967e46110c03bb0fd77d2a522e3afcb696e77b07e6233c",
+      "hash": "0x245a6dbaf85e36ad808a228c4a9a316f060a603ef4d4a684f8e4699b6371cdb4",
+      "hashMatchesSignedPayload": true,
+      "uiEvidence": {
+        "action": "adjudicate",
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "independentValidators": 4,
+        "canonicalState": {
+          "attestation_hash": "de6132a56e3ef81b388b555a2793b9e3e80af013b6b8f23944b3d47ae72ec14b",
+          "attested": true,
+          "attested_at": 1792362483,
+          "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+          "challenge_hash": "",
+          "challenge_text": "",
+          "challenges": [],
+          "consented": true,
+          "created": 1792362310,
+          "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+          "deadline": 1792448708,
+          "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+          "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+          "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "finalized_at": 0,
+          "handoff_at": 1792448708,
+          "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+          "last_at": 1792362526,
+          "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "result": "UNRESOLVED",
+          "round": 1,
+          "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+          "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+          "source_ref": "SYNTHETIC-QUALIFICATION-ONLY",
+          "status": "ASSESSED"
+        },
+        "historyEntries": 1
+      },
+      "receipt": {
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 1,
+        "postQuorumCancellations": 1,
+        "validatorCount": 4,
+        "leaderExecutionResults": [
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          },
+          {
+            "execution_result": "ERROR",
+            "canceledAfterQuorum": true
+          }
+        ],
+        "validatorReceiptSha256": "56cfdbc85b969fe8c1145ecde458b344589e2e63a16f26147a5ff7df70ef6077"
+      }
+    },
+    {
+      "action": "challenge",
+      "signer": "0x3a2FD329306634E88cd88366CFCd81dC88007e5B",
+      "expectedHash": "0x5c4d50ca055fc28d41310f39b3dd2fb4082f1eb75c1022edeeddb0c128182c32",
+      "phase": "VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE",
+      "to": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "contractRecipient": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+      "nonce": 3,
+      "calldataSha256": "38f7f3f24626835d485e1db306836d9721e09f32a2e3f1ecedf0a1aa0e653a1a",
+      "hash": "0x5c4d50ca055fc28d41310f39b3dd2fb4082f1eb75c1022edeeddb0c128182c32",
+      "hashMatchesSignedPayload": true,
+      "uiEvidence": {
+        "action": "challenge",
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "independentValidators": 4,
+        "canonicalState": {
+          "attestation_hash": "de6132a56e3ef81b388b555a2793b9e3e80af013b6b8f23944b3d47ae72ec14b",
+          "attested": true,
+          "attested_at": 1792362483,
+          "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+          "challenge_hash": "03a089af16a7acc27614c8f7f264aa316197cc02a5777615b9df277ba4e1ed34",
+          "challenge_text": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b: Test challenge: confirm that the synthetic evidence supports each frozen condition.",
+          "challenges": [
+            {
+              "actor": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+              "hash": "cd2a6eeb98bbb503bc2aae7a5bd24835df15bf79c1ccbcf793b1c55dc73871c6",
+              "text": "Test challenge: confirm that the synthetic evidence supports each frozen condition."
+            }
+          ],
+          "consented": true,
+          "created": 1792362310,
+          "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+          "deadline": 1792448708,
+          "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+          "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+          "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "finalized_at": 0,
+          "handoff_at": 1792448708,
+          "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+          "last_at": 1792362526,
+          "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "result": "UNRESOLVED",
+          "round": 1,
+          "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+          "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+          "source_ref": "SYNTHETIC-QUALIFICATION-ONLY",
+          "status": "CHALLENGED"
+        },
+        "historyEntries": 1
+      },
+      "receipt": {
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 1,
+        "postQuorumCancellations": 1,
+        "validatorCount": 4,
+        "leaderExecutionResults": [
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          },
+          {
+            "execution_result": "ERROR",
+            "canceledAfterQuorum": true
+          }
+        ],
+        "validatorReceiptSha256": "2f59af5e9e994a68842ea475ebd1502b548115091ef29f9c867960ff6cc48ca2"
+      }
+    },
+    {
+      "action": "challenge",
+      "signer": "0xf17DFc471a801Fa40691099eEDe98321Ef6B0134",
+      "expectedHash": "0xfaa2befba73a8b1d620613cc66fc28ecf32460cc200f619651ca22795352ba75",
+      "phase": "VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE",
+      "to": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "contractRecipient": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+      "nonce": 2,
+      "calldataSha256": "23b628e8774445a398b640039c072a33eb1448c0b94d0b59926e4a5cc0c14ed7",
+      "hash": "0xfaa2befba73a8b1d620613cc66fc28ecf32460cc200f619651ca22795352ba75",
+      "hashMatchesSignedPayload": true,
+      "uiEvidence": {
+        "action": "challenge",
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "independentValidators": 4,
+        "canonicalState": {
+          "attestation_hash": "de6132a56e3ef81b388b555a2793b9e3e80af013b6b8f23944b3d47ae72ec14b",
+          "attested": true,
+          "attested_at": 1792362483,
+          "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+          "challenge_hash": "455f67b1d8308f61f323b24e8dc2be74dd6ef6da4c682cb63dff207620c7d175",
+          "challenge_text": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b: Test challenge: confirm that the synthetic evidence supports each frozen condition.\n0xf17dfc471a801fa40691099eede98321ef6b0134: Test response: independently dispute the synthetic record; no factual claim is made.",
+          "challenges": [
+            {
+              "actor": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+              "hash": "cd2a6eeb98bbb503bc2aae7a5bd24835df15bf79c1ccbcf793b1c55dc73871c6",
+              "text": "Test challenge: confirm that the synthetic evidence supports each frozen condition."
+            },
+            {
+              "actor": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+              "hash": "a6f2446600b345fa3350d44bf54f24eed55ca8b56cd1b9a2ce07509750fdb6c2",
+              "text": "Test response: independently dispute the synthetic record; no factual claim is made."
+            }
+          ],
+          "consented": true,
+          "created": 1792362310,
+          "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+          "deadline": 1792448708,
+          "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+          "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+          "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "finalized_at": 0,
+          "handoff_at": 1792448708,
+          "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+          "last_at": 1792362526,
+          "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "result": "UNRESOLVED",
+          "round": 1,
+          "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+          "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+          "source_ref": "SYNTHETIC-QUALIFICATION-ONLY",
+          "status": "CHALLENGED"
+        },
+        "historyEntries": 1
+      },
+      "receipt": {
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "postQuorumCancellations": 0,
+        "validatorCount": 4,
+        "leaderExecutionResults": [
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          },
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          }
+        ],
+        "validatorReceiptSha256": "24c9d6eb596edfde90782e560ce2f06f97a01e78b3e2a46303f6d9aacf94ca37"
+      }
+    },
+    {
+      "action": "adjudicate",
+      "signer": "0x3a2FD329306634E88cd88366CFCd81dC88007e5B",
+      "expectedHash": "0x37965447bfad46a4ae14be9dfac0e318a4f17f7060cdfc60bf80a186da906bcc",
+      "phase": "VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE",
+      "to": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "contractRecipient": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+      "nonce": 4,
+      "calldataSha256": "39d9b5bf3457c36acd967e46110c03bb0fd77d2a522e3afcb696e77b07e6233c",
+      "hash": "0x37965447bfad46a4ae14be9dfac0e318a4f17f7060cdfc60bf80a186da906bcc",
+      "hashMatchesSignedPayload": true,
+      "uiEvidence": {
+        "action": "adjudicate",
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "independentValidators": 4,
+        "canonicalState": {
+          "attestation_hash": "de6132a56e3ef81b388b555a2793b9e3e80af013b6b8f23944b3d47ae72ec14b",
+          "attested": true,
+          "attested_at": 1792362483,
+          "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+          "challenge_hash": "455f67b1d8308f61f323b24e8dc2be74dd6ef6da4c682cb63dff207620c7d175",
+          "challenge_text": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b: Test challenge: confirm that the synthetic evidence supports each frozen condition.\n0xf17dfc471a801fa40691099eede98321ef6b0134: Test response: independently dispute the synthetic record; no factual claim is made.",
+          "challenges": [
+            {
+              "actor": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+              "hash": "cd2a6eeb98bbb503bc2aae7a5bd24835df15bf79c1ccbcf793b1c55dc73871c6",
+              "text": "Test challenge: confirm that the synthetic evidence supports each frozen condition."
+            },
+            {
+              "actor": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+              "hash": "a6f2446600b345fa3350d44bf54f24eed55ca8b56cd1b9a2ce07509750fdb6c2",
+              "text": "Test response: independently dispute the synthetic record; no factual claim is made."
+            }
+          ],
+          "consented": true,
+          "created": 1792362310,
+          "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+          "deadline": 1792448708,
+          "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+          "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+          "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "finalized_at": 0,
+          "handoff_at": 1792448708,
+          "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+          "last_at": 1792362672,
+          "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "result": "UNRESOLVED",
+          "round": 2,
+          "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+          "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+          "source_ref": "SYNTHETIC-QUALIFICATION-ONLY",
+          "status": "ASSESSED"
+        },
+        "historyEntries": 2
+      },
+      "receipt": {
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "postQuorumCancellations": 0,
+        "validatorCount": 4,
+        "leaderExecutionResults": [
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          },
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          }
+        ],
+        "validatorReceiptSha256": "e949911b4e1486670c6e998e78f0d41634420269fce3560ae3765be996f2f2e3"
+      }
+    },
+    {
+      "action": "finalize_case",
+      "signer": "0xb62945c78166774162447B057C766213982db4d6",
+      "expectedHash": "0x734a72f35505684b919b6833d42008834885369e3c04ed61bcdffaa73dd6a408",
+      "phase": "VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE",
+      "to": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "contractRecipient": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+      "nonce": 1,
+      "calldataSha256": "a159628ff17545fbd04ed1bf1e3c38130f5879639286e4ecc37aca4934bb84a1",
+      "hash": "0x734a72f35505684b919b6833d42008834885369e3c04ed61bcdffaa73dd6a408",
+      "hashMatchesSignedPayload": true,
+      "uiEvidence": {
+        "action": "finalize_case",
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "independentValidators": 4,
+        "canonicalState": {
+          "attestation_hash": "de6132a56e3ef81b388b555a2793b9e3e80af013b6b8f23944b3d47ae72ec14b",
+          "attested": true,
+          "attested_at": 1792362483,
+          "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+          "challenge_hash": "455f67b1d8308f61f323b24e8dc2be74dd6ef6da4c682cb63dff207620c7d175",
+          "challenge_text": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b: Test challenge: confirm that the synthetic evidence supports each frozen condition.\n0xf17dfc471a801fa40691099eede98321ef6b0134: Test response: independently dispute the synthetic record; no factual claim is made.",
+          "challenges": [
+            {
+              "actor": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+              "hash": "cd2a6eeb98bbb503bc2aae7a5bd24835df15bf79c1ccbcf793b1c55dc73871c6",
+              "text": "Test challenge: confirm that the synthetic evidence supports each frozen condition."
+            },
+            {
+              "actor": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+              "hash": "a6f2446600b345fa3350d44bf54f24eed55ca8b56cd1b9a2ce07509750fdb6c2",
+              "text": "Test response: independently dispute the synthetic record; no factual claim is made."
+            }
+          ],
+          "consented": true,
+          "created": 1792362310,
+          "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+          "deadline": 1792448708,
+          "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+          "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+          "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "finalized_at": 1792362719,
+          "finalized_by": "0xb62945c78166774162447b057c766213982db4d6",
+          "handoff_at": 1792448708,
+          "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+          "last_at": 1792362672,
+          "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "result": "UNRESOLVED",
+          "round": 2,
+          "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+          "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+          "source_ref": "SYNTHETIC-QUALIFICATION-ONLY",
+          "status": "FINALIZED"
+        },
+        "historyEntries": 2
+      },
+      "receipt": {
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "postQuorumCancellations": 0,
+        "validatorCount": 4,
+        "leaderExecutionResults": [
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          },
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          }
+        ],
+        "validatorReceiptSha256": "e60c6a7adc92417423a86052245bc3411659a57dfc40a91070fc839734b22100"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": "create_case",
+      "hash": "0xe2772218d3002b1ea60d69058bd95122f9bd7fe10510046eafd84acd02a1091d",
+      "state": {
+        "attestation_hash": "",
+        "attested": false,
+        "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+        "challenge_hash": "",
+        "challenge_text": "",
+        "challenges": [],
+        "consented": false,
+        "created": 1792362310,
+        "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+        "deadline": 1792448708,
+        "evidence": "",
+        "evidence_hash": "",
+        "finalized_at": 0,
+        "handoff_at": 1792448708,
+        "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+        "last_at": 0,
+        "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "result": "",
+        "round": 0,
+        "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+        "source_ref": "",
+        "status": "DRAFT"
+      }
+    },
+    {
+      "action": "consent",
+      "hash": "0x3f7ffa2931f0c18ca37b83a7c73b90e46930a62727e03d40852502183ec19bb7",
+      "state": {
+        "attestation_hash": "",
+        "attested": false,
+        "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+        "challenge_hash": "",
+        "challenge_text": "",
+        "challenges": [],
+        "consented": true,
+        "created": 1792362310,
+        "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+        "deadline": 1792448708,
+        "evidence": "",
+        "evidence_hash": "",
+        "finalized_at": 0,
+        "handoff_at": 1792448708,
+        "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+        "last_at": 0,
+        "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "result": "",
+        "round": 0,
+        "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+        "source_ref": "",
+        "status": "DRAFT"
+      }
+    },
+    {
+      "action": "freeze",
+      "hash": "0x3d197d88cd568ed98d93583620edb7eaf4c0dcf70aaef60175dfecd6e108c148",
+      "state": {
+        "attestation_hash": "",
+        "attested": false,
+        "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+        "challenge_hash": "",
+        "challenge_text": "",
+        "challenges": [],
+        "consented": true,
+        "created": 1792362310,
+        "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+        "deadline": 1792448708,
+        "evidence": "",
+        "evidence_hash": "",
+        "finalized_at": 0,
+        "handoff_at": 1792448708,
+        "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+        "last_at": 0,
+        "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "result": "",
+        "round": 0,
+        "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+        "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+        "source_ref": "",
+        "status": "FROZEN"
+      }
+    },
+    {
+      "action": "submit_evidence",
+      "hash": "0xdae46aed9bab5ce20ba7462b35f625f721ef016f15090122615d499655d6ff7c",
+      "state": {
+        "attestation_hash": "",
+        "attested": false,
+        "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+        "challenge_hash": "",
+        "challenge_text": "",
+        "challenges": [],
+        "consented": true,
+        "created": 1792362310,
+        "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+        "deadline": 1792448708,
+        "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+        "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+        "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "finalized_at": 0,
+        "handoff_at": 1792448708,
+        "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+        "last_at": 0,
+        "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "result": "",
+        "round": 0,
+        "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+        "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+        "source_ref": "",
+        "status": "EVIDENCE_LOCKED"
+      }
+    },
+    {
+      "action": "attest_evidence",
+      "hash": "0xfaad0e96f93291ecaa0dcee90278949eece72684d221e5a1d9d18abe304840bd",
+      "state": {
+        "attestation_hash": "de6132a56e3ef81b388b555a2793b9e3e80af013b6b8f23944b3d47ae72ec14b",
+        "attested": true,
+        "attested_at": 1792362483,
+        "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+        "challenge_hash": "",
+        "challenge_text": "",
+        "challenges": [],
+        "consented": true,
+        "created": 1792362310,
+        "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+        "deadline": 1792448708,
+        "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+        "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+        "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "finalized_at": 0,
+        "handoff_at": 1792448708,
+        "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+        "last_at": 0,
+        "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "result": "",
+        "round": 0,
+        "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+        "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+        "source_ref": "SYNTHETIC-QUALIFICATION-ONLY",
+        "status": "ATTESTED"
+      }
+    },
+    {
+      "action": "adjudicate",
+      "hash": "0x245a6dbaf85e36ad808a228c4a9a316f060a603ef4d4a684f8e4699b6371cdb4",
+      "state": {
+        "attestation_hash": "de6132a56e3ef81b388b555a2793b9e3e80af013b6b8f23944b3d47ae72ec14b",
+        "attested": true,
+        "attested_at": 1792362483,
+        "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+        "challenge_hash": "",
+        "challenge_text": "",
+        "challenges": [],
+        "consented": true,
+        "created": 1792362310,
+        "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+        "deadline": 1792448708,
+        "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+        "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+        "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "finalized_at": 0,
+        "handoff_at": 1792448708,
+        "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+        "last_at": 1792362526,
+        "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "result": "UNRESOLVED",
+        "round": 1,
+        "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+        "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+        "source_ref": "SYNTHETIC-QUALIFICATION-ONLY",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "action": "challenge",
+      "hash": "0x5c4d50ca055fc28d41310f39b3dd2fb4082f1eb75c1022edeeddb0c128182c32",
+      "state": {
+        "attestation_hash": "de6132a56e3ef81b388b555a2793b9e3e80af013b6b8f23944b3d47ae72ec14b",
+        "attested": true,
+        "attested_at": 1792362483,
+        "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+        "challenge_hash": "03a089af16a7acc27614c8f7f264aa316197cc02a5777615b9df277ba4e1ed34",
+        "challenge_text": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b: Test challenge: confirm that the synthetic evidence supports each frozen condition.",
+        "challenges": [
+          {
+            "actor": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+            "hash": "cd2a6eeb98bbb503bc2aae7a5bd24835df15bf79c1ccbcf793b1c55dc73871c6",
+            "text": "Test challenge: confirm that the synthetic evidence supports each frozen condition."
+          }
+        ],
+        "consented": true,
+        "created": 1792362310,
+        "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+        "deadline": 1792448708,
+        "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+        "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+        "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "finalized_at": 0,
+        "handoff_at": 1792448708,
+        "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+        "last_at": 1792362526,
+        "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "result": "UNRESOLVED",
+        "round": 1,
+        "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+        "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+        "source_ref": "SYNTHETIC-QUALIFICATION-ONLY",
+        "status": "CHALLENGED"
+      }
+    },
+    {
+      "action": "challenge",
+      "hash": "0xfaa2befba73a8b1d620613cc66fc28ecf32460cc200f619651ca22795352ba75",
+      "state": {
+        "attestation_hash": "de6132a56e3ef81b388b555a2793b9e3e80af013b6b8f23944b3d47ae72ec14b",
+        "attested": true,
+        "attested_at": 1792362483,
+        "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+        "challenge_hash": "455f67b1d8308f61f323b24e8dc2be74dd6ef6da4c682cb63dff207620c7d175",
+        "challenge_text": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b: Test challenge: confirm that the synthetic evidence supports each frozen condition.\n0xf17dfc471a801fa40691099eede98321ef6b0134: Test response: independently dispute the synthetic record; no factual claim is made.",
+        "challenges": [
+          {
+            "actor": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+            "hash": "cd2a6eeb98bbb503bc2aae7a5bd24835df15bf79c1ccbcf793b1c55dc73871c6",
+            "text": "Test challenge: confirm that the synthetic evidence supports each frozen condition."
+          },
+          {
+            "actor": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+            "hash": "a6f2446600b345fa3350d44bf54f24eed55ca8b56cd1b9a2ce07509750fdb6c2",
+            "text": "Test response: independently dispute the synthetic record; no factual claim is made."
+          }
+        ],
+        "consented": true,
+        "created": 1792362310,
+        "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+        "deadline": 1792448708,
+        "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+        "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+        "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "finalized_at": 0,
+        "handoff_at": 1792448708,
+        "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+        "last_at": 1792362526,
+        "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "result": "UNRESOLVED",
+        "round": 1,
+        "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+        "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+        "source_ref": "SYNTHETIC-QUALIFICATION-ONLY",
+        "status": "CHALLENGED"
+      }
+    },
+    {
+      "action": "adjudicate",
+      "hash": "0x37965447bfad46a4ae14be9dfac0e318a4f17f7060cdfc60bf80a186da906bcc",
+      "state": {
+        "attestation_hash": "de6132a56e3ef81b388b555a2793b9e3e80af013b6b8f23944b3d47ae72ec14b",
+        "attested": true,
+        "attested_at": 1792362483,
+        "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+        "challenge_hash": "455f67b1d8308f61f323b24e8dc2be74dd6ef6da4c682cb63dff207620c7d175",
+        "challenge_text": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b: Test challenge: confirm that the synthetic evidence supports each frozen condition.\n0xf17dfc471a801fa40691099eede98321ef6b0134: Test response: independently dispute the synthetic record; no factual claim is made.",
+        "challenges": [
+          {
+            "actor": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+            "hash": "cd2a6eeb98bbb503bc2aae7a5bd24835df15bf79c1ccbcf793b1c55dc73871c6",
+            "text": "Test challenge: confirm that the synthetic evidence supports each frozen condition."
+          },
+          {
+            "actor": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+            "hash": "a6f2446600b345fa3350d44bf54f24eed55ca8b56cd1b9a2ce07509750fdb6c2",
+            "text": "Test response: independently dispute the synthetic record; no factual claim is made."
+          }
+        ],
+        "consented": true,
+        "created": 1792362310,
+        "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+        "deadline": 1792448708,
+        "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+        "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+        "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "finalized_at": 0,
+        "handoff_at": 1792448708,
+        "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+        "last_at": 1792362672,
+        "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "result": "UNRESOLVED",
+        "round": 2,
+        "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+        "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+        "source_ref": "SYNTHETIC-QUALIFICATION-ONLY",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "action": "finalize_case",
+      "hash": "0x734a72f35505684b919b6833d42008834885369e3c04ed61bcdffaa73dd6a408",
+      "state": {
+        "attestation_hash": "de6132a56e3ef81b388b555a2793b9e3e80af013b6b8f23944b3d47ae72ec14b",
+        "attested": true,
+        "attested_at": 1792362483,
+        "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+        "challenge_hash": "455f67b1d8308f61f323b24e8dc2be74dd6ef6da4c682cb63dff207620c7d175",
+        "challenge_text": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b: Test challenge: confirm that the synthetic evidence supports each frozen condition.\n0xf17dfc471a801fa40691099eede98321ef6b0134: Test response: independently dispute the synthetic record; no factual claim is made.",
+        "challenges": [
+          {
+            "actor": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+            "hash": "cd2a6eeb98bbb503bc2aae7a5bd24835df15bf79c1ccbcf793b1c55dc73871c6",
+            "text": "Test challenge: confirm that the synthetic evidence supports each frozen condition."
+          },
+          {
+            "actor": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+            "hash": "a6f2446600b345fa3350d44bf54f24eed55ca8b56cd1b9a2ce07509750fdb6c2",
+            "text": "Test response: independently dispute the synthetic record; no factual claim is made."
+          }
+        ],
+        "consented": true,
+        "created": 1792362310,
+        "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+        "deadline": 1792448708,
+        "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+        "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+        "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "finalized_at": 1792362719,
+        "finalized_by": "0xb62945c78166774162447b057c766213982db4d6",
+        "handoff_at": 1792448708,
+        "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+        "last_at": 1792362672,
+        "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+        "result": "UNRESOLVED",
+        "round": 2,
+        "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+        "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+        "source_ref": "SYNTHETIC-QUALIFICATION-ONLY",
+        "status": "FINALIZED"
+      }
+    }
+  ],
+  "phase": "VERIFIED_FULL_BROWSER_LIFECYCLE",
+  "preflight": {
+    "functionName": "case_exists",
+    "exists": false,
+    "source": "GenLayerJS 1.1.8 LATEST_FINAL"
+  },
+  "expectedSteps": [
+    {
+      "action": "create_case",
+      "signerAddress": "0x3a2FD329306634E88cd88366CFCd81dC88007e5B",
+      "status": "DRAFT",
+      "round": null
+    },
+    {
+      "action": "consent",
+      "signerAddress": "0xf17DFc471a801Fa40691099eEDe98321Ef6B0134",
+      "status": "DRAFT",
+      "round": null
+    },
+    {
+      "action": "freeze",
+      "signerAddress": "0x3a2FD329306634E88cd88366CFCd81dC88007e5B",
+      "status": "FROZEN",
+      "round": null
+    },
+    {
+      "action": "submit_evidence",
+      "signerAddress": "0xf17DFc471a801Fa40691099eEDe98321Ef6B0134",
+      "status": "EVIDENCE_LOCKED",
+      "round": null
+    },
+    {
+      "action": "attest_evidence",
+      "signerAddress": "0xb62945c78166774162447B057C766213982db4d6",
+      "status": "ATTESTED",
+      "round": null
+    },
+    {
+      "action": "adjudicate",
+      "signerAddress": "0x3a2FD329306634E88cd88366CFCd81dC88007e5B",
+      "status": "ASSESSED",
+      "round": 1
+    },
+    {
+      "action": "challenge",
+      "signerAddress": "0x3a2FD329306634E88cd88366CFCd81dC88007e5B",
+      "status": "CHALLENGED",
+      "round": null
+    },
+    {
+      "action": "challenge",
+      "signerAddress": "0xf17DFc471a801Fa40691099eEDe98321Ef6B0134",
+      "status": "CHALLENGED",
+      "round": null
+    },
+    {
+      "action": "adjudicate",
+      "signerAddress": "0x3a2FD329306634E88cd88366CFCd81dC88007e5B",
+      "status": "ASSESSED",
+      "round": 2
+    },
+    {
+      "action": "finalize_case",
+      "signerAddress": "0xb62945c78166774162447B057C766213982db4d6",
+      "status": "FINALIZED",
+      "round": 2
+    }
+  ],
+  "terminal": {
+    "exists": true,
+    "status": "FINALIZED",
+    "verdict": "UNRESOLVED",
+    "round": 2,
+    "state": {
+      "attestation_hash": "de6132a56e3ef81b388b555a2793b9e3e80af013b6b8f23944b3d47ae72ec14b",
+      "attested": true,
+      "attested_at": 1792362483,
+      "attestor": "0xb62945c78166774162447b057c766213982db4d6",
+      "challenge_hash": "455f67b1d8308f61f323b24e8dc2be74dd6ef6da4c682cb63dff207620c7d175",
+      "challenge_text": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b: Test challenge: confirm that the synthetic evidence supports each frozen condition.\n0xf17dfc471a801fa40691099eede98321ef6b0134: Test response: independently dispute the synthetic record; no factual claim is made.",
+      "challenges": [
+        {
+          "actor": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+          "hash": "cd2a6eeb98bbb503bc2aae7a5bd24835df15bf79c1ccbcf793b1c55dc73871c6",
+          "text": "Test challenge: confirm that the synthetic evidence supports each frozen condition."
+        },
+        {
+          "actor": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+          "hash": "a6f2446600b345fa3350d44bf54f24eed55ca8b56cd1b9a2ce07509750fdb6c2",
+          "text": "Test response: independently dispute the synthetic record; no factual claim is made."
+        }
+      ],
+      "consented": true,
+      "created": 1792362310,
+      "creator": "0x3a2fd329306634e88cd88366cfcd81dc88007e5b",
+      "deadline": 1792448708,
+      "evidence": "Synthetic test evidence. It does not establish delivery, employment or issuer identity.",
+      "evidence_hash": "ce5ee850e360a685f9371d166fece619018a603d79b6993d911326872c26c897",
+      "evidence_submitter": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+      "finalized_at": 1792362719,
+      "finalized_by": "0xb62945c78166774162447b057c766213982db4d6",
+      "handoff_at": 1792448708,
+      "id": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+      "last_at": 1792362672,
+      "recipient": "0xf17dfc471a801fa40691099eede98321ef6b0134",
+      "result": "UNRESOLVED",
+      "round": 2,
+      "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+      "rule_hash": "e1abd7a70399a88910775daac7901dbf5715012a7f50f2844f08bef3d5debfe2",
+      "source_ref": "SYNTHETIC-QUALIFICATION-ONLY",
+      "status": "FINALIZED"
+    }
+  },
+  "browserErrors": [],
+  "verifiedAt": "2026-10-18T22:32:57.553Z"
+}

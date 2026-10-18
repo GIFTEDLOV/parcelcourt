@@ -1,0 +1,183 @@
+{
+  "app": "parcelcourt",
+  "contract": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+  "chainId": 61999,
+  "caseId": "GLV4-parcelcourt-39138804500",
+  "state": "PASS",
+  "txs": [
+    {
+      "method": "create_case",
+      "hash": "0xa5202dc504764ebb4eed2fd20a71e5811877b1944a311e935c10596a7f18bd57",
+      "phase": "FINALIZED",
+      "execution": [
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        },
+        {
+          "result": "ERROR",
+          "stderr": "Validator execution cancelled after quorum"
+        }
+      ],
+      "consensus": "MAJORITY_AGREE",
+      "verifiedCaseState": "DRAFT"
+    },
+    {
+      "method": "consent",
+      "hash": "0x4cb3a32bacad1f513d3cc9650fe7ed20dd05929c90d15deeb0fdb0386b55034f",
+      "phase": "FINALIZED",
+      "execution": [
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        },
+        {
+          "result": "ERROR",
+          "stderr": "Validator execution cancelled after quorum"
+        }
+      ],
+      "consensus": "MAJORITY_AGREE",
+      "verifiedCaseState": "DRAFT"
+    },
+    {
+      "method": "freeze",
+      "hash": "0xb095f4a4096781de7832f18222a8fe5011bfed4747b3df43e5dc4cdee936e41a",
+      "phase": "FINALIZED",
+      "execution": [
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        },
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        }
+      ],
+      "consensus": "MAJORITY_AGREE",
+      "verifiedCaseState": "FROZEN"
+    },
+    {
+      "method": "submit_evidence",
+      "hash": "0x0ef125a0c4405520a9c7f77f688d621afa3ee5308e17bca88246c14937192574",
+      "phase": "FINALIZED",
+      "execution": [
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        },
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        }
+      ],
+      "consensus": "MAJORITY_AGREE",
+      "verifiedCaseState": "EVIDENCE_LOCKED"
+    },
+    {
+      "method": "attest_evidence",
+      "hash": "0xc976a02a6360313f2bf42401d29f6d2359e7ebde00020f701064ec7e80a39289",
+      "phase": "FINALIZED",
+      "execution": [
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        },
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        }
+      ],
+      "consensus": "MAJORITY_AGREE",
+      "verifiedCaseState": "ATTESTED"
+    },
+    {
+      "method": "adjudicate",
+      "hash": "0x9169b51faf09c5425efd147c46ae997c3f404cca08e3f67630672f39334d1328",
+      "phase": "FINALIZED",
+      "execution": [
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        },
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        }
+      ],
+      "consensus": "MAJORITY_AGREE",
+      "verifiedCaseState": "ASSESSED"
+    },
+    {
+      "method": "challenge",
+      "hash": "0x9fc35cee6d83a56e9761d543c8da581e9cd081867ea9ab7e9243ad326e912b8c",
+      "phase": "FINALIZED",
+      "execution": [
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        },
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        }
+      ],
+      "consensus": "MAJORITY_AGREE",
+      "verifiedCaseState": "CHALLENGED"
+    },
+    {
+      "method": "challenge",
+      "hash": "0x0ab471e95cf3fc895924dbe9006006dc4d76b485b669b1b8d62d4d789d1f606e",
+      "phase": "FINALIZED",
+      "execution": [
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        },
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        }
+      ],
+      "consensus": "MAJORITY_AGREE",
+      "verifiedCaseState": "CHALLENGED"
+    },
+    {
+      "method": "adjudicate",
+      "hash": "0x98b8121f922187ad35179ad2249e7a76d41b4c3ea56d415640b932e9f4ad21ef",
+      "phase": "FINALIZED",
+      "execution": [
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        },
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        }
+      ],
+      "consensus": "MAJORITY_AGREE",
+      "verifiedCaseState": "ASSESSED"
+    },
+    {
+      "method": "finalize_case",
+      "hash": "0xd47904a27a59f2688c9b8965f7f7c2db8383d711f43f1fccd94d2f0f8485db86",
+      "phase": "FINALIZED",
+      "execution": [
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        },
+        {
+          "result": "SUCCESS",
+          "stderr": ""
+        }
+      ],
+      "consensus": "MAJORITY_AGREE",
+      "verifiedCaseState": "FINALIZED"
+    }
+  ],
+  "verdict": "UNRESOLVED",
+  "round": 2,
+  "sourceRef": "ISSUER-SYNTHETIC-LIVE-V4:parcelcourt:GLV4-parcelcourt-39138804500",
+  "auditEntries": 2
+}
