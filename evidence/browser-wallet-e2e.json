@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-18T21:47:21.572Z",
+  "generatedAt": "2026-10-18T22:20:25.723Z",
   "app": "ParcelCourt",
   "contract": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
   "chainId": 61999,
@@ -28,12 +28,12 @@
   },
   "duplicateWriteLock": {
     "status": "PASS",
-    "storedHash": "0x020ed4d7c78ed62175e44d3dbc1d95c22de847c06eacd5851586f32935d71103",
+    "storedHash": "0x63b06686cc6aa8e9a2e0c43326728445dddbd38d0f624e5f07ae4c9eb58c8154",
     "additionalSignatureRequests": 0
   },
   "timeoutRecovery": {
     "status": "PASS",
-    "savedBroadcastHash": "0x020ed4d7c78ed62175e44d3dbc1d95c22de847c06eacd5851586f32935d71103",
+    "savedBroadcastHash": "0x63b06686cc6aa8e9a2e0c43326728445dddbd38d0f624e5f07ae4c9eb58c8154",
     "firstReceiptRead": "one simulated HTTP 504",
     "retriedAgainstLiveRPC": true,
     "terminalPhase": "FINALIZED"
@@ -41,14 +41,14 @@
   "signedLiveRecovery": {
     "status": "PASS",
     "sourceEvidence": "browser-signed-live.json",
-    "caseId": "BROWSERLIVE-1792359315821-ParcelCourt",
-    "hash": "0x020ed4d7c78ed62175e44d3dbc1d95c22de847c06eacd5851586f32935d71103",
+    "caseId": "BROWSERLIVE-1792360535059-ParcelCourt",
+    "hash": "0x63b06686cc6aa8e9a2e0c43326728445dddbd38d0f624e5f07ae4c9eb58c8154",
     "phase": "FINALIZED",
     "consensus": "MAJORITY_AGREE",
-    "successfulLeaderExecutions": 1,
+    "successfulLeaderExecutions": 2,
     "validatorCount": 4,
     "canonicalStatus": "DRAFT",
-    "canonicalCreator": "0x78e16ce32c7c2a4f5b3fab3074db53f43eca8397"
+    "canonicalCreator": "0xe05fad6635ef54baa08bdc026457a7d1a75a698c"
   },
   "javascriptErrors": []
 }
