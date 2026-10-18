@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-18T21:47:21.572Z",
+  "app": "ParcelCourt",
+  "contract": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+  "chainId": 61999,
+  "browser": "Chromium via Playwright",
+  "viewport": {
+    "desktop": "1440x900",
+    "mobile": "390px"
+  },
+  "mobile": {
+    "viewport": 390,
+    "document": 390,
+    "body": 390,
+    "navClient": 174,
+    "navScroll": 595
+  },
+  "wrongNetwork": "PASS",
+  "accountChanged": "PASS",
+  "networkChanged": "PASS",
+  "walletRejection": {
+    "status": "PASS",
+    "liveReadOnlyPreflight": "case_exists",
+    "signatureRequests": 1,
+    "broadcast": false,
+    "pendingLockReleased": true
+  },
+  "duplicateWriteLock": {
+    "status": "PASS",
+    "storedHash": "0x020ed4d7c78ed62175e44d3dbc1d95c22de847c06eacd5851586f32935d71103",
+    "additionalSignatureRequests": 0
+  },
+  "timeoutRecovery": {
+    "status": "PASS",
+    "savedBroadcastHash": "0x020ed4d7c78ed62175e44d3dbc1d95c22de847c06eacd5851586f32935d71103",
+    "firstReceiptRead": "one simulated HTTP 504",
+    "retriedAgainstLiveRPC": true,
+    "terminalPhase": "FINALIZED"
+  },
+  "signedLiveRecovery": {
+    "status": "PASS",
+    "sourceEvidence": "browser-signed-live.json",
+    "caseId": "BROWSERLIVE-1792359315821-ParcelCourt",
+    "hash": "0x020ed4d7c78ed62175e44d3dbc1d95c22de847c06eacd5851586f32935d71103",
+    "phase": "FINALIZED",
+    "consensus": "MAJORITY_AGREE",
+    "successfulLeaderExecutions": 1,
+    "validatorCount": 4,
+    "canonicalStatus": "DRAFT",
+    "canonicalCreator": "0x78e16ce32c7c2a4f5b3fab3074db53f43eca8397"
+  },
+  "javascriptErrors": []
+}

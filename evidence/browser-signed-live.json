@@ -1,0 +1,75 @@
+{
+  "app": "ParcelCourt",
+  "url": "http://127.0.0.1:4190",
+  "contract": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+  "chainId": 61999,
+  "caseId": "BROWSERLIVE-1792359315821-ParcelCourt",
+  "provider": "injected EIP-1193 test provider with ephemeral viem signer",
+  "signer": "0x78E16ce32c7C2a4f5b3FaB3074DB53f43EcA8397",
+  "keyPersisted": false,
+  "preflight": {
+    "functionName": "case_exists",
+    "exists": false,
+    "source": "GenLayerJS 1.1.8 LATEST_FINAL"
+  },
+  "phase": "VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE",
+  "transactions": [
+    {
+      "method": "create_case",
+      "hash": "0x020ed4d7c78ed62175e44d3dbc1d95c22de847c06eacd5851586f32935d71103",
+      "phase": "BROADCAST_NO_FINALITY",
+      "to": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "contractRecipient": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+      "nonce": 0,
+      "gas": "500000",
+      "gasPrice": "0",
+      "calldataSha256": "dd3cd129d37cf268576751a7e39fd3b1f5c272aa970028a8dddf29c846236eb9",
+      "broadcastHash": "0x020ed4d7c78ed62175e44d3dbc1d95c22de847c06eacd5851586f32935d71103"
+    }
+  ],
+  "createdAt": "2026-10-18T21:35:17.456Z",
+  "form": {
+    "creator": "0x78E16ce32c7C2a4f5b3FaB3074DB53f43EcA8397",
+    "recipient": "0xabcdefabcdefabcdefabcdefabcdefabcdefabcd",
+    "attestor": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "allDistinct": true
+  },
+  "hashMatchesSignedPayload": true,
+  "browserOutput": "{\n  \"status\": \"VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE\",\n  \"transaction\": \"0x020ed4d7c78ed62175e44d3dbc1d95c22de847c06eacd5851586f32935d71103\",\n  \"action\": \"create_case\",\n  \"phase\": \"FINALIZED\",\n  \"consensus\": \"MAJORITY_AGREE\",\n  \"genvmLeaders\": 2,\n  \"independentValidators\": 4,\n  \"case\": {\n    \"attestation_hash\": \"\",\n    \"attested\": false,\n    \"attestor\": \"0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\n    \"challenge_hash\": \"\",\n    \"challenge_text\": \"\",\n    \"challenges\": [],\n    \"consented\": false,\n    \"created\": 1792359323,\n    \"creator\": \"0x78e16ce32c7c2a4f5b3fab3074db53f43eca8397\",\n    \"deadline\": 1792445720,\n    \"evidence\": \"\",\n    \"evidence_hash\": \"\",\n    \"finalized_at\": 0,\n    \"handoff_at\": 1792445720,\n    \"id\": \"BROWSERLIVE-1792359315821-ParcelCourt\",\n    \"last_at\": 0,\n    \"recipient\": \"0xabcdefabcdefabcdefabcdefabcdefabcdefabcd\",\n    \"result\": \"\",\n    \"round\": 0,\n    \"rule",
+  "browserErrors": [],
+  "receipt": {
+    "hash": "0x020ed4d7c78ed62175e44d3dbc1d95c22de847c06eacd5851586f32935d71103",
+    "phase": "FINALIZED",
+    "consensus": "MAJORITY_AGREE",
+    "successfulLeaderExecutions": 1,
+    "postQuorumCancellations": 1,
+    "validatorCount": 4,
+    "receiptStatus": "FINALIZED"
+  },
+  "state": {
+    "attestation_hash": "",
+    "attested": false,
+    "attestor": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "challenge_hash": "",
+    "challenge_text": "",
+    "challenges": [],
+    "consented": false,
+    "created": 1792359323,
+    "creator": "0x78e16ce32c7c2a4f5b3fab3074db53f43eca8397",
+    "deadline": 1792445720,
+    "evidence": "",
+    "evidence_hash": "",
+    "finalized_at": 0,
+    "handoff_at": 1792445720,
+    "id": "BROWSERLIVE-1792359315821-ParcelCourt",
+    "last_at": 0,
+    "recipient": "0xabcdefabcdefabcdefabcdefabcdefabcdefabcd",
+    "result": "",
+    "round": 0,
+    "rule": "Synthetic signed-browser qualification: ParcelCourt draft case only; no real-world claim or settlement.",
+    "source_ref": "",
+    "status": "DRAFT"
+  },
+  "existsAfter": true,
+  "verifiedAt": "2026-10-18T21:36:06.239Z"
+}
