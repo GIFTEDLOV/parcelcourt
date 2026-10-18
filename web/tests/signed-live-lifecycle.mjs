@@ -47,6 +47,7 @@ const record = {
   signerAddresses: accounts.map(account => account.address),
   privateKeysPersisted: false,
   transactions: [],
+  recoveries: [],
   steps: [],
   phase: 'PREFLIGHT'
 };
@@ -262,13 +263,26 @@ try {
       const output = document.querySelector('#chain-output')?.textContent || '';
       return output.includes('VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE') || output.includes('Submission ');
     }, null, { timeout: 600000 });
-    const output = await page.locator('#chain-output').innerText();
+    let output = await page.locator('#chain-output').innerText();
     const transaction = record.transactions.at(-1);
     if (!transaction || transaction.action !== step.action || transaction.hash === priorHash) {
       throw new Error(`No unique signed broadcast was captured for ${step.action}: ${output.slice(0, 500)}`);
     }
     if (!output.includes('VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE')) {
-      throw new Error(`The app did not verify ${step.action}; saved hash ${transaction.hash}: ${output.slice(0, 500)}`);
+      if (!output.includes('Submission was broadcast') || !transaction.hash) {
+        throw new Error(`The app did not verify ${step.action}; saved hash ${transaction.hash}: ${output.slice(0, 500)}`);
+      }
+      const initialError=output;
+      await page.locator('#chain-resume-hash').fill(transaction.hash);
+      await page.locator('#chain-resume').click();
+      await page.waitForFunction(hash=>{
+        const text=document.querySelector('#chain-output')?.textContent||'';
+        return text.includes('VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE')||text.includes(`Transaction ${hash} is not verified.`);
+      },transaction.hash,{timeout:60000});
+      output=await page.locator('#chain-output').innerText();
+      if(!output.includes('VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE'))throw new Error(`Exact-hash recovery did not verify ${step.action}; hash ${transaction.hash}: ${output.slice(0,500)}`);
+      record.recoveries.push({action:step.action,hash:transaction.hash,initialBroadcastError:initialError.slice(0,500),result:'VERIFIED_BY_EXACT_HASH_RESUME'});
+      save();
     }
     const uiEvidence = JSON.parse(output);
     if (uiEvidence.transaction !== transaction.hash || uiEvidence.phase !== 'FINALIZED' ||
