@@ -1,0 +1,43 @@
+{
+  "project": "ParcelCourt",
+  "chainId": 61999,
+  "address": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+  "sourceSha256": "302a0db3f6eca2266677af095ab98a80765221f890f3fd0d028bfaf88de7e224",
+  "abiSchemaSha256": "cef0fd7d95e3e616bc62644966e692e28ec805bf1fa738043a0e75e71dc043a4",
+  "sourceParity": true,
+  "abiParity": true,
+  "caseId": "GLV4-parcelcourt-39138804500",
+  "status": "FINALIZED",
+  "verdict": "UNRESOLVED",
+  "round": 2,
+  "challenges": 2,
+  "historyEntries": 2,
+  "historyHashChain": true,
+  "receipts": [
+    {
+      "hash": "0x9169b51faf09c5425efd147c46ae997c3f404cca08e3f67630672f39334d1328",
+      "phase": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "successfulLeaderExecutions": 2,
+      "postQuorumCancellations": 0,
+      "validatorCount": 4
+    },
+    {
+      "hash": "0x98b8121f922187ad35179ad2249e7a76d41b4c3ea56d415640b932e9f4ad21ef",
+      "phase": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "successfulLeaderExecutions": 2,
+      "postQuorumCancellations": 0,
+      "validatorCount": 4
+    },
+    {
+      "hash": "0xd47904a27a59f2688c9b8965f7f7c2db8383d711f43f1fccd94d2f0f8485db86",
+      "phase": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "successfulLeaderExecutions": 2,
+      "postQuorumCancellations": 0,
+      "validatorCount": 4
+    }
+  ],
+  "checkedAt": "2026-10-18T19:54:25.641Z"
+}

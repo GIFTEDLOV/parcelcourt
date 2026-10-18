@@ -1,0 +1,9 @@
+# Deployment and source provenance
+
+Existing deployment: [0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72](https://explorer-studio.genlayer.com/address/0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72), GenLayer Studionet chain 61999, RPC `https://studio.genlayer.com/api`. GenLayerJS 1.1.8 `getContractCode` bytes match `contracts/parcelcourt.py` at SHA-256 `302a0db3f6eca2266677af095ab98a80765221f890f3fd0d028bfaf88de7e224`; the deployed ABI equals the schema generated from that file at SHA-256 `cef0fd7d95e3e616bc62644966e692e28ec805bf1fa738043a0e75e71dc043a4`. No contract replacement was required.
+
+The original workflow [39138161003](https://github.com/GIFTEDLOV/driftproof/actions/runs/39138161003) failed in its later live qualification step after deployment and actual-byte verification succeeded. Do not call that workflow fully passed. The recorded live case and sanitized transaction/state evidence are in `evidence/parcelcourt-live.json`.
+
+Production URL: https://parcelcourt-genlayer.vercel.app. Current Vercel deployment `dpl_HMas8gLzXa85zeW98J5Zmb6y7cvu` is Ready but serves the earlier read-only bundle. Browser inspection confirms live canonical records and the correct address; mobile overflows. The updated source passed local Chromium with actual Studionet read-through and 390 px/desktop checks, but is not deployed. It remains locked until a funded ephemeral-signer browser transaction proves GenVM success and canonical state, then deployment smoke tests pass.
+
+`npm run verify:live` is read-only: it hashes deployed bytes, compares ABI schemas, inspects recorded semantic/finalization receipts, reads canonical state and verifies history. It does not broadcast. Any replacement deployment requires a documented blocker, new address, byte/ABI verification, fresh lifecycle qualification, frontend binding update and exact-release CI.

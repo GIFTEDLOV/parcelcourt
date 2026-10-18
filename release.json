@@ -1,0 +1,31 @@
+{
+  "address": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+  "hash": "302a0db3f6eca2266677af095ab98a80765221f890f3fd0d028bfaf88de7e224",
+  "abi": "cef0fd7d95e3e616bc62644966e692e28ec805bf1fa738043a0e75e71dc043a4",
+  "case": "GLV4-parcelcourt-39138804500",
+  "verdict": "UNRESOLVED",
+  "workflow": 39138804500,
+  "semantic": [
+    "0x9169b51faf09c5425efd147c46ae997c3f404cca08e3f67630672f39334d1328",
+    "0x98b8121f922187ad35179ad2249e7a76d41b4c3ea56d415640b932e9f4ad21ef"
+  ],
+  "final": "0xd47904a27a59f2688c9b8965f7f7c2db8383d711f43f1fccd94d2f0f8485db86",
+  "app": "https://parcelcourt-genlayer.vercel.app",
+  "name": "ParcelCourt",
+  "short": "Review delivery claims against a jointly frozen handoff promise, attested evidence, challenges and independent semantic consensus.",
+  "problem": "Delivery disputes depend on natural-language promises and evidence that may be incomplete or contradictory.",
+  "solution": "Three distinct wallets set the promise, attest an evidence digest and submit evidence; GenLayer validators independently evaluate handoff, recipient authorization and sufficiency.",
+  "outcomes": "SUPPORTED_DELIVERY, NOT_SUPPORTED, or UNRESOLVED. The recorded live case finalized UNRESOLVED.",
+  "explorer": "https://explorer-studio.genlayer.com/address/0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+  "repo": "https://github.com/GIFTEDLOV/parcelcourt",
+  "sourceFile": "contracts/parcelcourt.py",
+  "schemaSha256": "cef0fd7d95e3e616bc62644966e692e28ec805bf1fa738043a0e75e71dc043a4",
+  "chainId": 61999,
+  "caseStatus": "FINALIZED",
+  "workflowUrl": "https://github.com/GIFTEDLOV/driftproof/actions/runs/39138804500",
+  "sourceProvenanceRun": "https://github.com/GIFTEDLOV/driftproof/actions/runs/39138161003",
+  "firstRoundTx": "0x9169b51faf09c5425efd147c46ae997c3f404cca08e3f67630672f39334d1328",
+  "secondRoundTx": "0x98b8121f922187ad35179ad2249e7a76d41b4c3ea56d415640b932e9f4ad21ef",
+  "finalizationTx": "0xd47904a27a59f2688c9b8965f7f7c2db8383d711f43f1fccd94d2f0f8485db86",
+  "productionQualification": "INCOMPLETE: public app remains RELEASE_QUALIFIED=false pending signed-browser live E2E; do not submit as a fully qualified frontend."
+}
