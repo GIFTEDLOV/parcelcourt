@@ -1,0 +1,10 @@
+{
+  "app": "parcelcourt",
+  "chainId": 61999,
+  "address": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+  "sourceSha256": "302a0db3f6eca2266677af095ab98a80765221f890f3fd0d028bfaf88de7e224",
+  "installedSourceSha256": "302a0db3f6eca2266677af095ab98a80765221f890f3fd0d028bfaf88de7e224",
+  "sourceByteParity": "PASS",
+  "originalDeployRun": 39138161003,
+  "originalDeployCommit": "5e1d96fec2484b5fea5d1c8cfb3777ba9f51a352"
+}

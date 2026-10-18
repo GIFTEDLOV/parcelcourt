@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-18T22:56:44.303Z",
+  "app": "ParcelCourt",
+  "url": "https://parcelcourt-genlayer.vercel.app",
+  "contract": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+  "chainId": 61999,
+  "caseId": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
+  "search": {
+    "page": 2,
+    "pageSize": 10,
+    "filter": "exact on-chain case ID",
+    "resultCount": 1
+  },
+  "detail": {
+    "status": "FINALIZED",
+    "verdict": "UNRESOLVED",
+    "challengeCount": 2,
+    "historyEntries": 2,
+    "historyLinks": "verified"
+  },
+  "javascriptErrors": []
+}

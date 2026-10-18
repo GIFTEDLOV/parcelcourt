@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-18T22:20:25.723Z",
+  "generatedAt": "2026-10-18T22:53:14.408Z",
   "app": "ParcelCourt",
   "contract": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
   "chainId": 61999,
@@ -37,6 +37,12 @@
     "firstReceiptRead": "one simulated HTTP 504",
     "retriedAgainstLiveRPC": true,
     "terminalPhase": "FINALIZED"
+  },
+  "unknownBroadcastHashRecovery": {
+    "status": "PASS",
+    "attachedHash": "0x63b06686cc6aa8e9a2e0c43326728445dddbd38d0f624e5f07ae4c9eb58c8154",
+    "additionalSignatureRequests": 0,
+    "pendingLockClearedAfterVerifiedState": true
   },
   "signedLiveRecovery": {
     "status": "PASS",
