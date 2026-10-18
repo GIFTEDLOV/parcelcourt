@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "app": "ParcelCourt",
+  "url": "https://parcelcourt-genlayer.vercel.app",
+  "contract": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+  "chainId": 61999,
+  "caseId": "BROWSER-LIFECYCLE-1792361094451-ParcelCourt",
+  "syntheticQualificationOnly": true,
+  "signerAddresses": [
+    "0xCFd498FE2665A013bdc44C75493AbFD18483e6E6",
+    "0xCd2E3a8f99466a21df7e71E1977657265008669f",
+    "0xbB68d3151360FaF054A5fAa1DEdc4F3D52FE738d"
+  ],
+  "privateKeysPersisted": false,
+  "transactions": [
+    {
+      "action": "create_case",
+      "signer": "0xCFd498FE2665A013bdc44C75493AbFD18483e6E6",
+      "expectedHash": "0x743dad82db0cd00ec42c14a9b841fe1d6f740de1d1b43402d885c46375994790",
+      "phase": "VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE",
+      "to": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "contractRecipient": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+      "nonce": 0,
+      "calldataSha256": "e4ffcf477e99ae5af28d9f8b23a212a7d009f8286e258b1ade4a5705f30819f7",
+      "hash": "0x743dad82db0cd00ec42c14a9b841fe1d6f740de1d1b43402d885c46375994790",
+      "hashMatchesSignedPayload": true,
+      "uiEvidence": {
+        "action": "create_case",
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "successfulLeaderExecutions": 2,
+        "independentValidators": 4,
+        "canonicalState": {
+          "attestation_hash": "",
+          "attested": false,
+          "attestor": "0xbb68d3151360faf054a5faa1dedc4f3d52fe738d",
+          "challenge_hash": "",
+          "challenge_text": "",
+          "challenges": [],
+          "consented": false,
+          "created": 1792361099,
+          "creator": "0xcfd498fe2665a013bdc44c75493abfd18483e6e6",
+          "deadline": 1792447498,
+          "evidence": "",
+          "evidence_hash": "",
+          "finalized_at": 0,
+          "handoff_at": 1792447498,
+          "id": "BROWSER-LIFECYCLE-1792361094451-ParcelCourt",
+          "last_at": 0,
+          "recipient": "0xcd2e3a8f99466a21df7e71e1977657265008669f",
+          "result": "",
+          "round": 0,
+          "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+          "source_ref": "",
+          "status": "DRAFT"
+        },
+        "historyEntries": 0
+      }
+    },
+    {
+      "action": "consent",
+      "signer": "0xCd2E3a8f99466a21df7e71E1977657265008669f",
+      "expectedHash": "0x0564d9a7c8205b0bb0133955e1662a28d72b300a8cf3d0b0cc69065ca6c5b7cd",
+      "phase": "VERIFIED_FINALIZED_EXECUTION_AND_CANONICAL_STATE",
+      "to": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "contractRecipient": "0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72",
+      "nonce": 0,
+      "calldataSha256": "53d60f39d9071e10c369c33eef3049c1605a7ef1c66ecaad0629078a50e267e4",
+      "hash": "0x0564d9a7c8205b0bb0133955e1662a28d72b300a8cf3d0b0cc69065ca6c5b7cd",
+      "hashMatchesSignedPayload": true,
+      "reconciliation": {
+        "phase": "FINALIZED",
+        "consensus": "MAJORITY_AGREE",
+        "leaderExecutionResults": [
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          },
+          {
+            "execution_result": "SUCCESS",
+            "canceledAfterQuorum": false
+          }
+        ],
+        "validatorCount": 4,
+        "validatorReceiptSha256": "f321110a4263fdf311e4ab4ced5382da2291529f53d89b52e04131c3bd260eb8"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": "create_case",
+      "hash": "0x743dad82db0cd00ec42c14a9b841fe1d6f740de1d1b43402d885c46375994790",
+      "state": {
+        "attestation_hash": "",
+        "attested": false,
+        "attestor": "0xbb68d3151360faf054a5faa1dedc4f3d52fe738d",
+        "challenge_hash": "",
+        "challenge_text": "",
+        "challenges": [],
+        "consented": false,
+        "created": 1792361099,
+        "creator": "0xcfd498fe2665a013bdc44c75493abfd18483e6e6",
+        "deadline": 1792447498,
+        "evidence": "",
+        "evidence_hash": "",
+        "finalized_at": 0,
+        "handoff_at": 1792447498,
+        "id": "BROWSER-LIFECYCLE-1792361094451-ParcelCourt",
+        "last_at": 0,
+        "recipient": "0xcd2e3a8f99466a21df7e71e1977657265008669f",
+        "result": "",
+        "round": 0,
+        "rule": "Synthetic ParcelCourt qualification only: test policy and test evidence; no real-world claim or settlement.",
+        "source_ref": "",
+        "status": "DRAFT"
+      }
+    }
+  ],
+  "phase": "HALTED_AFTER_RECONCILED_CONSENT_POSTCONDITION_DEFECT",
+  "preflight": {
+    "functionName": "case_exists",
+    "exists": false,
+    "source": "GenLayerJS 1.1.8 LATEST_FINAL"
+  },
+  "expectedSteps": [
+    {
+      "action": "create_case",
+      "signerAddress": "0xCFd498FE2665A013bdc44C75493AbFD18483e6E6",
+      "status": "DRAFT",
+      "round": null
+    },
+    {
+      "action": "consent",
+      "signerAddress": "0xCd2E3a8f99466a21df7e71E1977657265008669f",
+      "status": "DRAFT",
+      "round": null
+    },
+    {
+      "action": "freeze",
+      "signerAddress": "0xCFd498FE2665A013bdc44C75493AbFD18483e6E6",
+      "status": "FROZEN",
+      "round": null
+    },
+    {
+      "action": "submit_evidence",
+      "signerAddress": "0xCd2E3a8f99466a21df7e71E1977657265008669f",
+      "status": "EVIDENCE_LOCKED",
+      "round": null
+    },
+    {
+      "action": "attest_evidence",
+      "signerAddress": "0xbB68d3151360FaF054A5fAa1DEdc4F3D52FE738d",
+      "status": "ATTESTED",
+      "round": null
+    },
+    {
+      "action": "adjudicate",
+      "signerAddress": "0xCFd498FE2665A013bdc44C75493AbFD18483e6E6",
+      "status": "ASSESSED",
+      "round": 1
+    },
+    {
+      "action": "challenge",
+      "signerAddress": "0xCFd498FE2665A013bdc44C75493AbFD18483e6E6",
+      "status": "CHALLENGED",
+      "round": null
+    },
+    {
+      "action": "challenge",
+      "signerAddress": "0xCd2E3a8f99466a21df7e71E1977657265008669f",
+      "status": "CHALLENGED",
+      "round": null
+    },
+    {
+      "action": "adjudicate",
+      "signerAddress": "0xCFd498FE2665A013bdc44C75493AbFD18483e6E6",
+      "status": "ASSESSED",
+      "round": 2
+    },
+    {
+      "action": "finalize_case",
+      "signerAddress": "0xbB68d3151360FaF054A5fAa1DEdc4F3D52FE738d",
+      "status": "FINALIZED",
+      "round": 2
+    }
+  ],
+  "error": "The app did not verify consent; saved hash 0x0564d9a7c8205b0bb0133955e1662a28d72b300a8cf3d0b0cc69065ca6c5b7cd: Submission was broadcast and must be reconciled before retry. Canonical finalized state does not prove the requested transition: {\"action\":\"consent\",\"expected\":null,\"check\":true,\"caseId\":\"BROWSER-LIFECYCLE-1792361094451-ParcelCourt\",\"expectedCaseId\":\"BROWSER-LIFECYCLE-1792361094451-ParcelCourt\",\"status\":\"DRAFT\",\"creator\":\"0xcfd498fe2665a013bdc44c75493abfd18483e6e6\",\"expectedCreator\":\"0xCd2E3a8f99466a21df7e71E1977657265008669f\",\"attestor\":\"0xbb68d3151360faf054a5faa1dedc4f3d52fe738d\",\"expectedAtte",
+  "browserErrors": [],
+  "reconciliation": {
+    "hash": "0x0564d9a7c8205b0bb0133955e1662a28d72b300a8cf3d0b0cc69065ca6c5b7cd",
+    "phase": "FINALIZED",
+    "consensus": "MAJORITY_AGREE",
+    "canonicalState": {
+      "id": "BROWSER-LIFECYCLE-1792361094451-ParcelCourt",
+      "status": "DRAFT",
+      "consented": true,
+      "creator": "0xcfd498fe2665a013bdc44c75493abfd18483e6e6",
+      "recipient": "0xcd2e3a8f99466a21df7e71e1977657265008669f",
+      "attestor": "0xbb68d3151360faf054a5faa1dedc4f3d52fe738d"
+    },
+    "rootCause": "UI postcondition map omitted consent -> DRAFT; on-chain transaction succeeded but app reported an error.",
+    "remediation": "Expected-state mapping corrected and regression test added; fresh full lifecycle qualification pending."
+  },
+  "reconciledAt": "2026-10-18T22:07:22.727Z"
+}
