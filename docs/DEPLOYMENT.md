@@ -14,13 +14,13 @@
 
 - Historic qualification case `GLV4-parcelcourt-39138804500` finalized `UNRESOLVED`; details and transaction hashes are in the checked-in evidence.
 - Qualification Actions: [run 39138804500](https://github.com/GIFTEDLOV/driftproof/actions/runs/39138804500).
-- Latest exact-main qualification CI before release preparation: [run 39173930011](https://github.com/GIFTEDLOV/parcelcourt/actions/runs/39173930011).
+- Latest exact-main qualification CI on the release preparation baseline: [run 39175259789](https://github.com/GIFTEDLOV/parcelcourt/actions/runs/39175259789).
 
 ## Production application
 
 - Alias: https://parcelcourt-genlayer.vercel.app
-- Current Vercel production deployment: `dpl_8M1N7ixBvj4uFS3Sqvav43xWaEnN`
-- Deployment URL: https://parcelcourt-genlayer-curd0goju-kolofahkelvin16-6437s-projects.vercel.app
+- Current Vercel production deployment: `dpl_BQzpZhv1YEKyRrnshfNFQ6CqKXJm`
+- Deployment URL: https://parcelcourt-genlayer-6l9eq86yv-kolofahkelvin16-6437s-projects.vercel.app
 - Runtime config binds chain `61999`, contract `0xC0B3De8897015a9aAfDc06EB4d09FD2F4d62BA72`, and the SHA-256 above. Wallet writes are enabled only after real signed-browser qualification.
 - The browser test suite covers desktop and 390 px Chromium, account/network changes, rejection, duplicate-write prevention, exact transaction recovery, successful GenVM execution, and canonical state readback.
 - Production registry browser verification passed exact-ID search and canonical terminal case/history readback.

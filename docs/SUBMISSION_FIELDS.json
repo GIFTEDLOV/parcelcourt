@@ -25,18 +25,20 @@
     "caseId": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
     "terminalVerdict": "UNRESOLVED",
     "appUrl": "https://parcelcourt-genlayer.vercel.app",
-    "productionDeploymentId": "dpl_8M1N7ixBvj4uFS3Sqvav43xWaEnN",
+    "productionDeploymentId": "dpl_BQzpZhv1YEKyRrnshfNFQ6CqKXJm",
     "evidence": [
       "evidence/browser-wallet-e2e.json",
       "evidence/signed-browser-lifecycle.json",
       "evidence/signed-browser-lifecycle-readback.json",
-      "evidence/signed-browser-registry.json"
+      "evidence/signed-browser-registry.json",
+      "evidence/production-registry-retries.json"
     ],
-    "registryVerification": "PASS"
+    "registryVerification": "PASS on the production alias on 2026-10-19: exact-ID search, canonical FINALIZED detail, challenge count, history entries and SHA-256 links verified.",
+    "productionDeploymentUrl": "https://parcelcourt-genlayer-6l9eq86yv-kolofahkelvin16-6437s-projects.vercel.app"
   },
-  "securityAndQualificationSummary": "Automated adversarial, state-machine, schema, address-compatibility, history-integrity and wallet E2E checks passed. A genuine Chromium wallet signed transaction was reconciled against successful GenVM execution and canonical state. The synthetic full lifecycle finalized UNRESOLVED after both parties challenged. Production registry search/detail verified a two-challenge, two-entry hash-linked history. The public deployment uses the verified V4 contract.",
-  "reviewerInstructions": "Open the production app and connect a wallet on Studionet chain 61999 to inspect current canonical cases. Review contracts/parcelcourt.py, evidence/signed-browser-lifecycle.json, evidence/signed-browser-lifecycle-readback.json and evidence/signed-browser-registry.json. The end-to-end qualification case BROWSER-LIFECYCLE-1792362304421-ParcelCourt finalized UNRESOLVED; it is synthetic and not evidence of a real delivery. Historical case GLV4-parcelcourt-39138804500 also finalized UNRESOLVED.",
-  "knownLimitationsAndExternalTrustAssumptions": "Qualification cases and delivery evidence are synthetic. An attestor signature proves control of the agreed wallet, not carrier identity, physical delivery, or document authenticity. There is no carrier identity oracle, insurance escrow, or settlement. Studionet's public RPC imposed a 500-request/hour rate limit during the ShiftFair registry read; the app surfaces RPC failures without substituting synthetic data. Cases are append-only and not pruned.",
+  "securityAndQualificationSummary": "Automated adversarial, state-machine, schema, address-compatibility, history-integrity and wallet E2E checks passed. A genuine Chromium signed transaction was reconciled against successful GenVM execution and canonical state. The synthetic full lifecycle finalized UNRESOLVED after both parties challenged. Production registry search/detail on deployment dpl_BQzpZhv1YEKyRrnshfNFQ6CqKXJm verified the canonical terminal state, two challenges and two hash-linked history entries; latest browser-wallet and registry checks passed.",
+  "reviewerInstructions": "Open https://parcelcourt-genlayer.vercel.app and connect a wallet on Studionet chain 61999. Review contracts/parcelcourt.py, evidence/signed-browser-lifecycle.json, evidence/signed-browser-lifecycle-readback.json, evidence/browser-wallet-e2e.json, evidence/signed-browser-registry.json, and evidence/production-registry-retries.json. The BROWSER-LIFECYCLE-1792362304421-ParcelCourt case finalized UNRESOLVED; its scenario is synthetic and is not proof of a real delivery. Historical case GLV4-parcelcourt-39138804500 also finalized UNRESOLVED.",
+  "knownLimitationsAndExternalTrustAssumptions": "Qualification cases and delivery evidence are synthetic. An attestor signature proves control of the agreed wallet, not carrier identity, physical delivery, or document authenticity. There is no carrier identity oracle, insurance escrow, or settlement. Studionet RPC can be intermittently unavailable or rate-limited; an initial production read failure and successful retry are recorded in evidence/production-registry-retries.json. Cases are append-only and not pruned.",
   "portalSubmissionStatus": "PREPARED_NOT_SUBMITTED",
   "whyGenLayer": "Validators independently assess whether delivery evidence substantiates the exact frozen handoff promise and named recipient. Deterministic code alone cannot determine those semantic facts.",
   "githubRepository": "https://github.com/GIFTEDLOV/parcelcourt",
@@ -45,5 +47,5 @@
   "sourceSha256": "302a0db3f6eca2266677af095ab98a80765221f890f3fd0d028bfaf88de7e224",
   "qualificationCase": "GLV4-parcelcourt-39138804500",
   "terminalVerdict": "UNRESOLVED",
-  "knownLimitations": "Qualification cases and delivery evidence are synthetic. An attestor signature proves control of the agreed wallet, not carrier identity, physical delivery, or document authenticity. There is no carrier identity oracle, insurance escrow, or settlement. Studionet's public RPC imposed a 500-request/hour rate limit during the ShiftFair registry read; the app surfaces RPC failures without substituting synthetic data. Cases are append-only and not pruned."
+  "knownLimitations": "Qualification cases and delivery evidence are synthetic. An attestor signature proves control of the agreed wallet, not carrier identity, physical delivery, or document authenticity. There is no carrier identity oracle, insurance escrow, or settlement. Studionet RPC can be intermittently unavailable or rate-limited; an initial production read failure and successful retry are recorded in evidence/production-registry-retries.json. Cases are append-only and not pruned."
 }
