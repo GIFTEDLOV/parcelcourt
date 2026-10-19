@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-19T06:58:28Z",
+  "app": "ParcelCourt",
+  "url": "https://parcelcourt-genlayer.vercel.app",
+  "deploymentId": "dpl_BQzpZhv1YEKyRrnshfNFQ6CqKXJm",
+  "chainId": 61999,
+  "writesSent": 0,
+  "attempts": [
+    {
+      "stage": "Initial parallel production registry E2E",
+      "result": "FAIL",
+      "detail": "The live UI surfaced the GenLayer SDK unknown RPC error. No mock fallback or write was used."
+    },
+    {
+      "stage": "Sequential production registry E2E",
+      "result": "PASS",
+      "evidence": "evidence/signed-browser-registry.json"
+    }
+  ],
+  "finalResult": "PASS",
+  "finalEvidence": "evidence/signed-browser-registry.json"
+}

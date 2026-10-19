@@ -7,8 +7,8 @@
 - Deployed V4 source SHA-256: `302a0db3f6eca2266677af095ab98a80765221f890f3fd0d028bfaf88de7e224`; ABI schema SHA-256: `cef0fd7d95e3e616bc62644966e692e28ec805bf1fa738043a0e75e71dc043a4`.
 - Historic case `GLV4-parcelcourt-39138804500`: `FINALIZED / UNRESOLVED`; its source inputs are synthetic and labeled.
 - Qualification workflow: [39138804500](https://github.com/GIFTEDLOV/driftproof/actions/runs/39138804500).
-- Exact-main CI before release preparation: [39173930011](https://github.com/GIFTEDLOV/parcelcourt/actions/runs/39173930011) passed.
-- Production application is `https://parcelcourt-genlayer.vercel.app`; deployment `dpl_8M1N7ixBvj4uFS3Sqvav43xWaEnN` is READY.
+- Exact-main CI on the release preparation baseline: [39175259789](https://github.com/GIFTEDLOV/parcelcourt/actions/runs/39175259789) passed.
+- Production application is `https://parcelcourt-genlayer.vercel.app`; deployment `dpl_BQzpZhv1YEKyRrnshfNFQ6CqKXJm` is READY.
 - Signed production-browser lifecycle `BROWSER-LIFECYCLE-1792362304421-ParcelCourt` finalized `UNRESOLVED`; a real signed transaction was independently checked against GenVM execution and canonical state.
 - Registry read qualification: `PASS`. Exact-ID production search, terminal result, both challenges and hash-linked history were verified.
 

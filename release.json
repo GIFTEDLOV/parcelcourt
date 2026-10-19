@@ -13,21 +13,24 @@
   "terminalVerdict": "UNRESOLVED",
   "qualificationWorkflow": "https://github.com/GIFTEDLOV/driftproof/actions/runs/39138804500",
   "exactMainCi": {
-    "runId": 39173930011,
-    "url": "https://github.com/GIFTEDLOV/parcelcourt/actions/runs/39173930011",
-    "status": "PASS"
+    "runId": 39175259789,
+    "url": "https://github.com/GIFTEDLOV/parcelcourt/actions/runs/39175259789",
+    "status": "PASS",
+    "headSha": "596ea70b6a5cdeab200074116e77e6fa643cca6c"
   },
   "productionApp": "https://parcelcourt-genlayer.vercel.app",
   "productionDeployment": {
-    "id": "dpl_8M1N7ixBvj4uFS3Sqvav43xWaEnN",
-    "url": "https://parcelcourt-genlayer-curd0goju-kolofahkelvin16-6437s-projects.vercel.app",
+    "id": "dpl_BQzpZhv1YEKyRrnshfNFQ6CqKXJm",
+    "url": "https://parcelcourt-genlayer-6l9eq86yv-kolofahkelvin16-6437s-projects.vercel.app",
     "alias": "https://parcelcourt-genlayer.vercel.app",
     "status": "READY"
   },
   "browserQualification": {
     "caseId": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
     "verdict": "UNRESOLVED",
-    "registryStatus": "PASS"
+    "registryStatus": "PASS",
+    "productionDeploymentId": "dpl_BQzpZhv1YEKyRrnshfNFQ6CqKXJm",
+    "registryEvidence": "evidence/signed-browser-registry.json"
   },
   "contractSourcePath": "contracts/parcelcourt.py",
   "evidence": [
@@ -35,10 +38,12 @@
     "evidence/live-verification.json",
     "evidence/browser-wallet-e2e.json",
     "evidence/signed-browser-lifecycle.json",
-    "evidence/signed-browser-lifecycle-readback.json"
+    "evidence/signed-browser-lifecycle-readback.json",
+    "evidence/signed-browser-registry.json",
+    "evidence/production-registry-retries.json"
   ],
   "portalSubmissionStatus": "PREPARED_NOT_SUBMITTED",
-  "knownLimitations": "Qualification cases and delivery evidence are synthetic. An attestor signature proves control of the agreed wallet, not carrier identity, physical delivery, or document authenticity. There is no carrier identity oracle, insurance escrow, or settlement. Studionet's public RPC imposed a 500-request/hour rate limit during the ShiftFair registry read; the app surfaces RPC failures without substituting synthetic data. Cases are append-only and not pruned.",
+  "knownLimitations": "Qualification cases and delivery evidence are synthetic. An attestor signature proves control of the agreed wallet, not carrier identity, physical delivery, or document authenticity. There is no carrier identity oracle, insurance escrow, or settlement. Studionet RPC can be intermittently unavailable or rate-limited; an initial production read failure and successful retry are recorded in evidence/production-registry-retries.json. Cases are append-only and not pruned.",
   "sourceFile": "contracts/parcelcourt.py",
   "hash": "302a0db3f6eca2266677af095ab98a80765221f890f3fd0d028bfaf88de7e224",
   "schemaSha256": "cef0fd7d95e3e616bc62644966e692e28ec805bf1fa738043a0e75e71dc043a4",
@@ -63,6 +68,7 @@
   "caseStatus": "FINALIZED",
   "workflowUrl": "https://github.com/GIFTEDLOV/driftproof/actions/runs/39138804500",
   "sourceProvenanceRun": "https://github.com/GIFTEDLOV/driftproof/actions/runs/39138161003",
-  "exactMainCiUrl": "https://github.com/GIFTEDLOV/parcelcourt/actions/runs/39173930011",
-  "productionQualification": "Signed browser E2E and production deployment verified. Production registry read status: PASS. Portal dossier prepared, not submitted."
+  "exactMainCiUrl": "https://github.com/GIFTEDLOV/parcelcourt/actions/runs/39175259789",
+  "productionQualification": "V4.0.0 production deployment READY; signed-browser wallet recovery and canonical registry qualification PASS on 2026-10-19. Portal dossier prepared, not submitted.",
+  "exactMainCommit": "596ea70b6a5cdeab200074116e77e6fa643cca6c"
 }

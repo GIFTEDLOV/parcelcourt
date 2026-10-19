@@ -26,11 +26,11 @@ Leader and validators independently classify handoff_matches_promise, authorized
 
 - Historic case: `GLV4-parcelcourt-39138804500`, terminal `UNRESOLVED`; source data is synthetic and explicitly labeled.
 - Historic qualification: [GitHub Actions run 39138804500](https://github.com/GIFTEDLOV/driftproof/actions/runs/39138804500).
-- Project exact-head CI: [run 39173930011](https://github.com/GIFTEDLOV/parcelcourt/actions/runs/39173930011).
+- Project exact-head CI: [run 39175259789](https://github.com/GIFTEDLOV/parcelcourt/actions/runs/39175259789).
 - Production application: https://parcelcourt-genlayer.vercel.app
-- Current production deployment: `dpl_8M1N7ixBvj4uFS3Sqvav43xWaEnN` (https://parcelcourt-genlayer-curd0goju-kolofahkelvin16-6437s-projects.vercel.app).
+- Current production deployment: `dpl_BQzpZhv1YEKyRrnshfNFQ6CqKXJm` (https://parcelcourt-genlayer-6l9eq86yv-kolofahkelvin16-6437s-projects.vercel.app).
 - Signed Chromium lifecycle: `BROWSER-LIFECYCLE-1792362304421-ParcelCourt` finalized `UNRESOLVED`; see [lifecycle evidence](evidence/signed-browser-lifecycle.json), [independent receipt and state readback](evidence/signed-browser-lifecycle-readback.json), and [production browser-wallet evidence](evidence/browser-wallet-e2e.json).
-- Production registry browser check: `PASS`; see [registry evidence](evidence/signed-browser-registry.json) when present. Exact case search, final status, challenges, and linked history were verified.
+- Production registry browser check: PASS on 2026-10-19; [live evidence](evidence/signed-browser-registry.json) verifies exact case search, final status, challenges and linked history. A transient initial RPC error and its recovery are recorded in evidence/production-registry-retries.json.
 
 ## Release and submission status
 
