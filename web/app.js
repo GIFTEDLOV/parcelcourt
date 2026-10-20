@@ -283,201 +283,185 @@ function renderLandingPage(cases, counts) {
   const recentCases = cases.slice().reverse().slice(0, 4);
 
   return `
-    <div class="landing-container">
-      <!-- Sawad / Framer Style Hero -->
-      <section class="landing-hero">
-        <div class="hero-badge">
-          <span class="signal-dot connected"></span>
-          <span>GenLayer Intelligent Contract · Studionet 61999</span>
+    <div class="sawad-container">
+      <!-- Sawad 2-Column Hero Section -->
+      <section class="sawad-hero-grid">
+        <!-- Left Column: Iconic White Protocol Card -->
+        <div class="sawad-white-card">
+          <div class="sawad-white-card-inner-graphic">
+            <!-- Concentric Contour Waves Background -->
+            <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.25;pointer-events:none" viewBox="0 0 300 260" fill="none">
+              <circle cx="150" cy="130" r="40" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <circle cx="150" cy="130" r="75" stroke="#fff" stroke-width="1.5"/>
+              <circle cx="150" cy="130" r="115" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 6"/>
+              <circle cx="150" cy="130" r="150" stroke="#fff" stroke-width="1.5"/>
+            </svg>
+            <!-- Shield Graphic with GenLayer Glow -->
+            <div style="position:relative;z-index:1;text-align:center">
+              <div style="font-size:72px;line-height:1;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.5))">⚖️</div>
+              <div style="font-family:ui-monospace,monospace;font-size:11px;font-weight:800;letter-spacing:0.18em;color:#ffffff;margin-top:10px;text-transform:uppercase;background:rgba(0,0,0,0.3);padding:4px 12px;border-radius:20px">
+                STUDIONET · 61999
+              </div>
+            </div>
+          </div>
+          <div class="sawad-badge-flame">⚡</div>
+          <h2 class="sawad-card-name">ParcelCourt</h2>
+          <p class="sawad-card-desc">An Intelligent Contract that arbitrates physical handoffs and delivery claims on GenLayer Studionet.</p>
+          <div class="sawad-social-icons">
+            <a class="sawad-icon-circle" href="https://explorer-studio.genlayer.com/address/${esc(ADDRESS)}" target="_blank" rel="noopener noreferrer" title="View on GenLayer Studio Explorer">↗</a>
+            <a class="sawad-icon-circle" href="https://github.com/GIFTEDLOV/parcelcourt" target="_blank" rel="noopener noreferrer" title="View GitHub Repository">◈</a>
+            <a class="sawad-icon-circle" href="https://docs.genlayer.com" target="_blank" rel="noopener noreferrer" title="Read GenLayer Docs">📄</a>
+            <a class="sawad-icon-circle" href="https://studio.genlayer.com" target="_blank" rel="noopener noreferrer" title="GenLayer Studio RPC">⚡</a>
+          </div>
         </div>
-        <h1 class="hero-title">
-          Adversarial delivery & dispute resolution <em>powered by GenVM AI consensus</em>
-        </h1>
-        <p class="hero-desc">
-          An immutable multi-party arbitration ledger on GenLayer. Freeze service policies, commit cryptographic delivery evidence, and invoke non-deterministic LLM validator consensus with hash-linked finality.
-        </p>
-        <div class="hero-cta-group">
-          <button class="hero-cta-primary" id="landing-launch-workspace">
-            Open Case Workspace →
-          </button>
-          <button class="hero-cta-secondary" id="landing-wallet-trigger">
-            Connect Web3 Wallet
-          </button>
-          <button class="hero-cta-secondary" id="landing-view-all-cases">
-            View Live Registry (${counts.total})
-          </button>
-          <a class="hero-cta-link" href="https://explorer-studio.genlayer.com/address/${esc(ADDRESS)}" target="_blank" rel="noopener noreferrer">
-            Verified Contract ↗
-          </a>
+
+        <!-- Right Column: Giant Headline + Stats + 2 Cards -->
+        <div class="sawad-hero-right">
+          <div class="sawad-headline-stack">
+            <span class="sawad-headline-white">INTELLIGENT</span>
+            <span class="sawad-headline-ghost">CONTRACT</span>
+          </div>
+          <p class="sawad-hero-p">
+            Passionate about verifiable, tamper-resistant dispute resolution. Transforming natural-language delivery agreements into hash-linked GenVM consensus decisions.
+          </p>
+
+          <div class="sawad-stats-row">
+            <div class="sawad-stat-item">
+              <div class="sawad-stat-num">+${counts.total}</div>
+              <div class="sawad-stat-label">Recorded Cases</div>
+            </div>
+            <div class="sawad-stat-item">
+              <div class="sawad-stat-num">+4</div>
+              <div class="sawad-stat-label">Role Actors</div>
+            </div>
+            <div class="sawad-stat-item">
+              <div class="sawad-stat-num">+61999</div>
+              <div class="sawad-stat-label">Studionet Chain</div>
+            </div>
+          </div>
+
+          <div class="sawad-cards-row">
+            <!-- Orange Card -->
+            <div class="sawad-card-orange" id="sawad-card-orange-trigger" role="button" tabindex="0">
+              <svg style="position:absolute;top:0;right:0;width:100%;height:100%;opacity:0.25;pointer-events:none" viewBox="0 0 300 200" fill="none">
+                <path d="M-50 150 C50 50, 150 200, 250 80 S350 180, 400 100" stroke="#fff" stroke-width="2"/>
+                <path d="M-50 180 C50 80, 150 230, 250 110 S350 210, 400 130" stroke="#fff" stroke-width="2"/>
+                <path d="M-50 210 C50 110, 150 260, 250 140 S350 240, 400 160" stroke="#fff" stroke-width="2"/>
+              </svg>
+              <div style="font-size:26px">📚</div>
+              <div class="sawad-card-title-orange">Zero-Trust Handoff & Evidence Lock</div>
+              <div class="sawad-btn-arrow-circle">→</div>
+            </div>
+
+            <!-- Lime Green Card -->
+            <div class="sawad-card-lime" id="sawad-card-lime-trigger" role="button" tabindex="0">
+              <svg style="position:absolute;top:0;right:0;width:100%;height:100%;opacity:0.2;pointer-events:none" viewBox="0 0 300 200" fill="none">
+                <polyline points="0,50 60,180 120,40 180,160 240,30 300,150" stroke="#000" stroke-width="2"/>
+                <polyline points="0,80 60,210 120,70 180,190 240,60 300,180" stroke="#000" stroke-width="2"/>
+              </svg>
+              <div style="font-size:26px">◈</div>
+              <div class="sawad-card-title-lime">GenVM AI Consensus Arbitration</div>
+              <div class="sawad-btn-arrow-circle-black">→</div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- Bento Grid System -->
-      <div class="bento-grid">
-        <div class="bento-card bento-col-4 bento-card-glow">
-          <div class="bento-header">
-            <span class="eyebrow">CANONICAL STATE</span>
-            <div class="bento-icon">⬡</div>
-          </div>
-          <div>
-            <div class="bento-val">${counts.total}</div>
-            <div class="bento-label">Recorded Cases</div>
-          </div>
-          <p class="bento-desc">Live on-chain delivery agreements stored immutably on Studionet storage slots.</p>
+      <!-- Section 2: Recent Projects / Cases -->
+      <section>
+        <div class="sawad-section-title-stack">
+          <span class="sawad-section-title-white">RECENT</span>
+          <span class="sawad-section-title-ghost">CASES</span>
         </div>
-
-        <div class="bento-card bento-col-4 bento-card-glow">
-          <div class="bento-header">
-            <span class="eyebrow">ACTIVE EVIDENCE</span>
-            <div class="bento-icon">⚡</div>
-          </div>
-          <div>
-            <div class="bento-val">${counts.frozen}</div>
-            <div class="bento-label">Evidence Workflows</div>
-          </div>
-          <p class="bento-desc">Cases with frozen delivery conditions, counterparty consents, or attested manifests.</p>
-        </div>
-
-        <div class="bento-card bento-col-4 bento-card-glow">
-          <div class="bento-header">
-            <span class="eyebrow">GENVM ROUNDS</span>
-            <div class="bento-icon">◈</div>
-          </div>
-          <div>
-            <div class="bento-val">${counts.assessed}</div>
-            <div class="bento-label">Consensus Assessed</div>
-          </div>
-          <p class="bento-desc">AI validator evaluations conducted under non-deterministic consensus principles.</p>
-        </div>
-
-        <!-- Bento Row 2: Architecture & Live Specimen -->
-        <div class="bento-card bento-col-7">
-          <div class="bento-header">
-            <span class="eyebrow">ADVERSARIAL MULTI-PARTY PROTOCOL</span>
-            <span class="pill" style="background:#6affd822;color:#6affd8">Role Enforced</span>
-          </div>
-          <div>
-            <h3 style="font-size:22px;margin:0 0 8px;letter-spacing:-.03em">Zero Trust Handoff Protocol</h3>
-            <p class="bento-desc">Every delivery requires explicit consent, immutable policy locking, courier proof attestation, and transparent AI consensus before fund execution.</p>
-          </div>
-          <div class="specimen-grid">
-            <div class="specimen-item">
-              <span>01. Creator</span>
-              <strong>Originating Merchant</strong>
-              <small>Deploys policy & stakes bounty</small>
-            </div>
-            <div class="specimen-item">
-              <span>02. Counterparty</span>
-              <strong>Consenting Recipient</strong>
-              <small>Explicitly locks agreement</small>
-            </div>
-            <div class="specimen-item">
-              <span>03. Attestor</span>
-              <strong>Designated Courier</strong>
-              <small>Commits cryptographic manifest</small>
-            </div>
-            <div class="specimen-item">
-              <span>04. GenVM Validators</span>
-              <strong>AI Consensus Nodes</strong>
-              <small>Evaluate prompt compliance</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="bento-card bento-col-5">
-          <div class="bento-header">
-            <span class="eyebrow">CONTRACT TELEMETRY</span>
-            <span class="pill" style="background:#ffffff15;color:#ffffff">Studionet 61999</span>
-          </div>
-          <div>
-            <h3 style="font-size:20px;margin:0 0 10px;letter-spacing:-.03em">Verified Intelligent Contract</h3>
-            <p class="bento-desc">Python-powered smart contract deployed on GenLayer Studionet with deterministic hash verification.</p>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:10px;background:color-mix(in srgb,var(--back) 60%,transparent);border:1px solid var(--border);border-radius:12px;padding:16px">
-            <div style="display:flex;justify-content:space-between;font-size:11px">
-              <span class="muted">Contract:</span>
-              <span class="mono" style="font-weight:700;color:var(--accent)">${shorten(ADDRESS)}</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;font-size:11px">
-              <span class="muted">Chain ID:</span>
-              <span class="mono">61999 (0xF22F)</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;font-size:11px">
-              <span class="muted">RPC:</span>
-              <span class="mono">studio.genlayer.com/api</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;font-size:11px">
-              <span class="muted">Source Hash:</span>
-              <span class="mono">${(window.CONTRACT_SOURCE_SHA256||'302a0db3').slice(0, 16)}…</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bento Row 3: 4 Step Pipeline -->
-        <div class="bento-card bento-col-3">
-          <div class="pipeline-step-badge">Phase 01</div>
-          <h4 style="margin:0 0 8px;font-size:16px">Freeze Policy</h4>
-          <p class="bento-desc">Contract rules, timeline constraints, and delivery parameters are immutably hashed and frozen into contract storage.</p>
-        </div>
-
-        <div class="bento-card bento-col-3">
-          <div class="pipeline-step-badge">Phase 02</div>
-          <h4 style="margin:0 0 8px;font-size:16px">Attest Evidence</h4>
-          <p class="bento-desc">Designated courier commits authenticated delivery logs, photo SHA-256 hashes, and GPS location timestamps.</p>
-        </div>
-
-        <div class="bento-card bento-col-3">
-          <div class="pipeline-step-badge">Phase 03</div>
-          <h4 style="margin:0 0 8px;font-size:16px">GenVM Consensus</h4>
-          <p class="bento-desc">Decentralized validators execute non-deterministic LLM principle prompts to render comparative verdict agreements.</p>
-        </div>
-
-        <div class="bento-card bento-col-3">
-          <div class="pipeline-step-badge">Phase 04</div>
-          <h4 style="margin:0 0 8px;font-size:16px">Challenge Window</h4>
-          <p class="bento-desc">Parties hold a dispute grace period before state finalization triggers automated escrow distribution.</p>
-        </div>
-
-        <!-- Bento Row 4: Recent Real Cases on Chain -->
-        <div class="bento-card bento-col-12">
-          <div class="bento-header">
-            <div>
-              <span class="eyebrow">STUDIONET CANONICAL LEDGER</span>
-              <h3 style="font-size:20px;margin:4px 0 0">Recent Verified Contract Cases</h3>
-            </div>
-            <button class="cta" id="landing-cta-view-registry">Explore All ${counts.total} Cases →</button>
-          </div>
-          ${safeEmpty}
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:10px">
-            ${recentCases.length ? recentCases.map(c => `
-              <div class="recent-case-card" role="button" tabindex="0" data-live-case="${esc(c.id)}">
-                <div class="case-card-head">
-                  <span class="mono" style="font-weight:800;color:var(--accent)">${esc(c.id)}</span>
-                  ${badge(c)}
+        ${safeEmpty}
+        <div class="sawad-project-list">
+          ${recentCases.length ? recentCases.map((c, i) => {
+            const gradients = [
+              'linear-gradient(135deg, #7928ca, #ff0080)',
+              'linear-gradient(135deg, #0070f3, #00dfd8)',
+              'linear-gradient(135deg, #f46c38, #f9cb28)',
+              'linear-gradient(135deg, #10b981, #06b6d4)'
+            ];
+            return `
+              <div class="sawad-project-row" role="button" tabindex="0" data-live-case="${esc(c.id)}">
+                <div style="display:flex;align-items:center;min-width:0;flex:1">
+                  <div class="sawad-project-thumb" style="background:${gradients[i % gradients.length]}">
+                    ◈
+                  </div>
+                  <div style="min-width:0">
+                    <div style="font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-0.02em;margin-bottom:4px">${esc(c.id)}</div>
+                    <div style="font-size:14px;color:#998f8f;line-height:1.4">
+                      ${esc(c.rule ? (c.rule.slice(0, 80) + (c.rule.length > 80 ? '…' : '')) : 'Standard delivery policy')} · Attestor ${esc(shorten(c.attestor))} · ${esc(c.round || 0)} round(s)
+                    </div>
+                  </div>
                 </div>
-                <div class="case-card-rule">${esc(c.rule ? (c.rule.slice(0, 95) + (c.rule.length > 95 ? '…' : '')) : 'Standard handoff policy')}</div>
-                <div class="case-card-meta">
-                  <span>Attestor: <span class="mono">${esc(shorten(c.attestor))}</span></span>
-                  <span>Rounds: ${esc(c.round || 0)}</span>
+                <div style="display:flex;align-items:center;gap:16px;flex-shrink:0">
+                  ${badge(c)}
+                  <span class="sawad-project-arrow">↗</span>
                 </div>
               </div>
-            `).join('') : '<div class="blank">No live cases recorded yet. Deploy your first case via the On-Chain workspace.</div>'}
-          </div>
+            `;
+          }).join('') : '<div class="blank">No canonical cases recorded yet. Open the On-chain workspace to register a delivery agreement.</div>'}
         </div>
+      </section>
 
-        <!-- Bento Row 5: Framer Bottom CTA Box -->
-        <div class="bento-col-12">
-          <div class="framer-cta-card">
+      <!-- Section 3: Four Phases of Verification (12 Years of Experience layout) -->
+      <section>
+        <div class="sawad-section-title-stack">
+          <span class="sawad-section-title-white">FOUR PHASES OF</span>
+          <span class="sawad-section-title-ghost">VERIFICATION</span>
+        </div>
+        <div class="sawad-exp-list">
+          <div class="sawad-exp-row">
             <div>
-              <h2>Start Arbitrating On GenLayer</h2>
-              <p>Connect your wallet to sign multi-party transactions, deploy contract instances, or submit cryptographically signed delivery attestations.</p>
+              <div style="font-size:20px;font-weight:800;color:#ffffff;margin-bottom:6px">Phase 01: Policy Inscription & Escrow Lock</div>
+              <p style="font-size:15px;color:#998f8f;margin:0 0 10px;max-width:700px;line-height:1.5">
+                Merchant and counterparty freeze delivery conditions, collateral stake, and deadlines into immutable storage slots.
+              </p>
+              <span style="font-size:13px;font-weight:700;color:#f46c38">Step 01 · Escrow Terms Frozen</span>
             </div>
-            <div style="display:flex;gap:14px;flex-wrap:wrap">
-              <button class="hero-cta-primary" id="landing-cta-launch">Launch Workspace</button>
-              <button class="hero-cta-secondary" id="landing-cta-connect">Connect Wallet</button>
+            <span class="sawad-project-arrow">↗</span>
+          </div>
+
+          <div class="sawad-exp-row">
+            <div>
+              <div style="font-size:20px;font-weight:800;color:#ffffff;margin-bottom:6px">Phase 02: Courier Proof & Manifest Attestation</div>
+              <p style="font-size:15px;color:#998f8f;margin:0 0 10px;max-width:700px;line-height:1.5">
+                Designated courier signs SHA-256 evidence digests, geolocation telemetry, and physical parcel handoff timestamps.
+              </p>
+              <span style="font-size:13px;font-weight:700;color:#c5ff41">Step 02 · Cryptographic Proof</span>
             </div>
+            <span class="sawad-project-arrow">↗</span>
+          </div>
+
+          <div class="sawad-exp-row">
+            <div>
+              <div style="font-size:20px;font-weight:800;color:#ffffff;margin-bottom:6px">Phase 03: GenVM Decentralized AI Deliberation</div>
+              <p style="font-size:15px;color:#998f8f;margin:0 0 10px;max-width:700px;line-height:1.5">
+                Independent consensus validators assess proof compliance against frozen natural-language principles using comparative prompts.
+              </p>
+              <span style="font-size:13px;font-weight:700;color:#6affd8">Step 03 · Multi-Round Consensus</span>
+            </div>
+            <span class="sawad-project-arrow">↗</span>
+          </div>
+
+          <div class="sawad-exp-row">
+            <div>
+              <div style="font-size:20px;font-weight:800;color:#ffffff;margin-bottom:6px">Phase 04: Challenge Window & Final Settlement</div>
+              <p style="font-size:15px;color:#998f8f;margin:0 0 10px;max-width:700px;line-height:1.5">
+                Contesting window for disputed delivery states prior to automated GenVM payout distribution and terminal state lock.
+              </p>
+              <span style="font-size:13px;font-weight:700;color:#ff8e8e">Step 04 · Final Settlement</span>
+            </div>
+            <span class="sawad-project-arrow">↗</span>
           </div>
         </div>
+      </section>
+
+      <!-- Floating Sawad Action Dock -->
+      <div class="sawad-floating-dock">
+        <button class="sawad-floating-btn lime" id="sawad-float-launch">⚡ Launch Workspace</button>
+        <button class="sawad-floating-btn orange" id="sawad-float-wallet">⬡ Connect Wallet</button>
       </div>
     </div>
   `;
@@ -608,6 +592,9 @@ function bind(){
   $('case-filter')?.addEventListener('input',e=>{activeSearch=e.target.value;const filtered=live.cases.filter(r=>(r.id+' '+r.status+' '+r.rule).toLowerCase().includes(activeSearch.toLowerCase()));$('filtered-cases').innerHTML=renderCases(filtered);document.querySelectorAll('#filtered-cases [data-live-case]').forEach(n=>n.addEventListener('click',()=>void detail(n.dataset.liveCase)))});
 
   // Framer / Sawad Landing Page CTA bindings
+  $('sawad-card-orange-trigger')?.addEventListener('click', () => nav('On-chain'));
+  $('sawad-card-lime-trigger')?.addEventListener('click', () => nav('Cases'));
+  $('sawad-float-launch')?.addEventListener('click', () => nav('On-chain'));
   $('landing-launch-workspace')?.addEventListener('click', () => nav('On-chain'));
   $('landing-cta-launch')?.addEventListener('click', () => nav('On-chain'));
   $('landing-view-all-cases')?.addEventListener('click', () => nav('Cases'));
@@ -624,6 +611,7 @@ function bind(){
       openWalletModal();
     }
   };
+  $('sawad-float-wallet')?.addEventListener('click', triggerWallet);
   $('landing-wallet-trigger')?.addEventListener('click', triggerWallet);
   $('landing-cta-connect')?.addEventListener('click', triggerWallet);
 }
