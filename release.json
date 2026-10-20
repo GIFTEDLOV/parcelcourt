@@ -20,8 +20,8 @@
   },
   "productionApp": "https://parcelcourt-genlayer.vercel.app",
   "productionDeployment": {
-    "id": "dpl_BQzpZhv1YEKyRrnshfNFQ6CqKXJm",
-    "url": "https://parcelcourt-genlayer-6l9eq86yv-kolofahkelvin16-6437s-projects.vercel.app",
+    "id": "dpl_6dzaESdi8TvzFsstmMt5ZehBKAUJ",
+    "url": "https://parcelcourt-genlayer-ii6hbpb0s-kolofahkelvin16-6437s-projects.vercel.app",
     "alias": "https://parcelcourt-genlayer.vercel.app",
     "status": "READY"
   },
@@ -29,7 +29,7 @@
     "caseId": "BROWSER-LIFECYCLE-1792362304421-ParcelCourt",
     "verdict": "UNRESOLVED",
     "registryStatus": "PASS",
-    "productionDeploymentId": "dpl_BQzpZhv1YEKyRrnshfNFQ6CqKXJm",
+    "productionDeploymentId": "dpl_6dzaESdi8TvzFsstmMt5ZehBKAUJ",
     "registryEvidence": "evidence/signed-browser-registry.json"
   },
   "contractSourcePath": "contracts/parcelcourt.py",
