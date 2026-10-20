@@ -1,8 +1,8 @@
 import { createClient } from 'genlayer-js';
 import { studionet } from 'genlayer-js/chains';
 import { TransactionHashVariant } from 'genlayer-js/types';
-import { chainUI } from './onchain.js';
-import { CASE_REGISTRY_PAGE_SIZE, shouldCancelRegistryRead, verifyAuditHistory } from './qualification.js';
+import { chainUI, getWalletState, subscribeWallet, connectGlobalWallet, disconnectWallet, switchOrAddStudionet } from './onchain.js';
+import { CASE_REGISTRY_PAGE_SIZE, shouldCancelRegistryRead, verifyAuditHistory, canPerform } from './qualification.js';
 
 const APP = window.APP;
 const ADDRESS = window.CONTRACT_ADDRESS;
@@ -10,7 +10,7 @@ const CHAIN_ID = 61999;
 const networkClient = createClient({ chain: studionet });
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-const shorten = value => String(value ?? '').length > 22 ? `${String(value).slice(0,12)}…${String(value).slice(-7)}` : String(value ?? '');
+const shorten = value => String(value ?? '').length > 22 ? `${String(value).slice(0,10)}…${String(value).slice(-6)}` : String(value ?? '');
 const stringify = obj => JSON.stringify(obj, (_, v) => typeof v === 'bigint' ? v.toString() : v, 2);
 const validContract = /^0x[a-fA-F0-9]{40}$/.test(ADDRESS || '');
 let page = 'Overview';
@@ -23,6 +23,251 @@ const pill = status => `<span class="pill">${esc(status || 'UNKNOWN')}</span>`;
 const panel = (heading, body, hint='') => `<div class="surface"><div class="section-head"><h2>${esc(heading)}</h2><span class="hint">${esc(hint)}</span></div>${body}</div>`;
 const progress = () => `<div class="release"><span class="signal"></span><span><strong>GENLAYER STUDIONET / LIVE CASES.</strong> ${validContract ? 'These records are read from finalized V4 contract state.' : 'No verified contract configured.'} Verified source ${esc(window.CONTRACT_SOURCE_SHA256||'unavailable')}. Wallet signing is ${window.RELEASE_QUALIFIED===true?'enabled after qualification':'locked pending signed-browser and live execution evidence'}. No simulated case is represented as a blockchain record. ${live.checkedAt ? 'Last refreshed: '+esc(live.checkedAt) : ''}</span></div>`;
 const badge = r => pill(r.status);
+
+function renderLifecycleStepper(status) {
+  const steps = [
+    { key: 'DRAFT', label: '1. Draft' },
+    { key: 'CONSENT', label: '2. Consent' },
+    { key: 'FROZEN', label: '3. Frozen' },
+    { key: 'EVIDENCE_LOCKED', label: '4. Evidence' },
+    { key: 'ATTESTED', label: '5. Attested' },
+    { key: 'ASSESSED', label: '6. Assessed' },
+    { key: 'CHALLENGED', label: '7. Challenge' },
+    { key: 'FINALIZED', label: '8. Finalized' }
+  ];
+  
+  const order = { 'DRAFT': 0, 'FROZEN': 2, 'EVIDENCE_LOCKED': 3, 'ATTESTED': 4, 'ASSESSED': 5, 'CHALLENGED': 6, 'FINALIZED': 7 };
+  const currentIdx = order[status] ?? 0;
+  
+  return `<div class="lifecycle-stepper" aria-label="Case Lifecycle Progress">
+    ${steps.map((s, idx) => {
+      const isCompleted = idx < currentIdx;
+      const isActive = idx === currentIdx;
+      const cls = isCompleted ? 'step completed' : isActive ? 'step active' : 'step';
+      return `<div class="${cls}">
+        <span class="step-num">${isCompleted ? '✓' : idx + 1}</span>
+        <span class="step-label">${s.label}</span>
+      </div>`;
+    }).join('')}
+  </div>`;
+}
+
+function renderConsensusMatrix(record, history) {
+  if (!history || !history.length) {
+    return `<div class="surface" style="margin-top:14px"><div class="section-head"><h2>GenLayer AI Consensus Facts</h2><span class="hint">Awaiting semantic round</span></div><p class="muted">Independent AI validators evaluate evidence once submitted and attested.</p></div>`;
+  }
+  const latestRound = history[history.length - 1];
+  const vector = latestRound?.vector || {};
+  const hasVector = Object.keys(vector).length > 0;
+  
+  const factBadge = val => val === true ? `<span class="fact-true">TRUE</span>` : val === false ? `<span class="fact-false">FALSE</span>` : `<span class="fact-pending">PENDING</span>`;
+  
+  return `<div class="surface" style="margin-top:14px">
+    <div class="section-head">
+      <h2>GenLayer AI Consensus Facts</h2>
+      <span class="hint">Round ${esc(latestRound?.round || record.round || 1)} · Strict Validator Equivalence</span>
+    </div>
+    <div class="consensus-matrix">
+      <div class="consensus-head">
+        <span>Semantic Factor</span>
+        <span>AI Verdict</span>
+        <span>Deterministic Rule Effect</span>
+      </div>
+      <div class="consensus-row">
+        <div><b>Handoff matches promise</b><small class="desc">Does delivery match terms in the frozen agreement?</small></div>
+        <div>${factBadge(vector.handoff_matches_promise)}</div>
+        <small class="muted">Required for SUPPORTED_DELIVERY</small>
+      </div>
+      <div class="consensus-row">
+        <div><b>Authorized recipient supported</b><small class="desc">Is parcel accepted by or for the designated recipient?</small></div>
+        <div>${factBadge(vector.authorized_recipient_supported)}</div>
+        <small class="muted">Required for SUPPORTED_DELIVERY</small>
+      </div>
+      <div class="consensus-row">
+        <div><b>Evidence sufficient</b><small class="desc">Is external proof authentic, complete & verified?</small></div>
+        <div>${factBadge(vector.evidence_sufficient)}</div>
+        <small class="muted">If false, deterministically UNRESOLVED</small>
+      </div>
+    </div>
+    <p class="footnote" style="margin-top:8px">Deterministic outcome: <b>${esc(record.result || latestRound?.verdict || 'Awaiting finality')}</b>. GenLayer validators vote strictly on facts; smart contract code alone maps facts to outcomes.</p>
+  </div>`;
+}
+
+function renderRoleBanner(record) {
+  const ws = getWalletState();
+  if (!ws.connected || !ws.address) {
+    return `<div class="role-banner">
+      <div><span>Wallet not connected. Connect your wallet to participate in this case.</span></div>
+      <button class="quick-action-btn" id="modal-connect-wallet">Connect Wallet</button>
+    </div>`;
+  }
+  const userAddr = ws.address.toLowerCase();
+  const isCreator = record.creator?.toLowerCase() === userAddr;
+  const isRecipient = record.recipient?.toLowerCase() === userAddr;
+  const isAttestor = record.attestor?.toLowerCase() === userAddr;
+  
+  let roleTitle = 'Observer';
+  let eligibleAction = null;
+  const now = Math.floor(Date.now() / 1000);
+  
+  if (isCreator) {
+    roleTitle = 'Creator';
+    if (canPerform('freeze', record, ws.address, now)) eligibleAction = { name: 'freeze', label: 'Freeze Clause' };
+    else if (canPerform('submit_evidence', record, ws.address, now)) eligibleAction = { name: 'submit_evidence', label: 'Submit Evidence' };
+    else if (canPerform('adjudicate', record, ws.address, now)) eligibleAction = { name: 'adjudicate', label: 'Trigger Adjudication' };
+    else if (canPerform('challenge', record, ws.address, now)) eligibleAction = { name: 'challenge', label: 'Submit Challenge' };
+  } else if (isRecipient) {
+    roleTitle = 'Counterparty (Recipient)';
+    if (canPerform('consent', record, ws.address, now)) eligibleAction = { name: 'consent', label: 'Provide Counterparty Consent' };
+    else if (canPerform('submit_evidence', record, ws.address, now)) eligibleAction = { name: 'submit_evidence', label: 'Submit Evidence' };
+    else if (canPerform('adjudicate', record, ws.address, now)) eligibleAction = { name: 'adjudicate', label: 'Trigger Adjudication' };
+    else if (canPerform('challenge', record, ws.address, now)) eligibleAction = { name: 'challenge', label: 'Submit Challenge' };
+  } else if (isAttestor) {
+    roleTitle = 'Designated Attestor';
+    if (canPerform('attest_evidence', record, ws.address, now)) eligibleAction = { name: 'attest_evidence', label: 'Attest Locked Evidence' };
+  }
+  
+  if (canPerform('finalize_case', record, ws.address, now)) {
+    eligibleAction = { name: 'finalize_case', label: 'Finalize Case' };
+  }
+
+  return `<div class="role-banner">
+    <div>
+      <span class="role-badge">Your Role: ${esc(roleTitle)}</span>
+      <span class="muted" style="margin-left:8px">${esc(shorten(ws.address))}</span>
+    </div>
+    ${eligibleAction ? `<button class="quick-action-btn" id="modal-quick-action" data-action="${esc(eligibleAction.name)}" data-case="${esc(record.id)}">${esc(eligibleAction.label)} →</button>` : `<span class="hint">No pending actions for this wallet</span>`}
+  </div>`;
+}
+
+function updateGlobalWalletUI(state) {
+  const btn = $('global-wallet-btn');
+  const label = $('global-wallet-label');
+  const netName = $('global-network-name');
+  const dot = $('global-signal-dot');
+  const sideTag = $('write-gate-status');
+  const sideSignal = $('sidebar-signal');
+
+  if (!state.connected) {
+    if (btn) {
+      btn.classList.remove('connected');
+      btn.title = 'Click to connect MetaMask or Web3 wallet';
+    }
+    if (label) label.textContent = 'Connect Wallet';
+    if (dot) {
+      dot.className = 'signal-dot' + (state.address ? ' warning' : '');
+    }
+    if (netName) {
+      netName.textContent = state.address ? `Wrong Network (${state.chainId})` : 'Studionet · 61999';
+    }
+    if (sideTag) {
+      sideTag.textContent = state.address ? `Wrong network (${state.chainId})` : 'Wallet not connected';
+    }
+    if (sideSignal) {
+      sideSignal.style.background = state.address ? '#ff6b6b' : '#e9b46f';
+    }
+  } else {
+    if (btn) {
+      btn.classList.add('connected');
+      btn.title = `Connected: ${state.address}\nNetwork: GenLayer Studionet (61999)\nClick to view wallet details`;
+    }
+    if (label) label.textContent = shorten(state.address);
+    if (dot) dot.className = 'signal-dot connected';
+    if (netName) netName.textContent = 'Studionet · 61999';
+    if (sideTag) sideTag.textContent = `Connected: ${shorten(state.address)}`;
+    if (sideSignal) sideSignal.style.background = '#6affd8';
+  }
+}
+
+function openWalletModal() {
+  const ws = getWalletState();
+  const modal = $('wallet-modal');
+  const body = $('wallet-modal-body');
+  if (!modal || !body) return;
+  
+  if (!ws.address) {
+    body.innerHTML = `
+      <div class="wallet-status-card" style="text-align:center;padding:24px 16px">
+        <div style="font-size:36px;margin-bottom:12px">⬡</div>
+        <h3>No Wallet Connected</h3>
+        <p class="muted" style="margin:8px 0 16px">Connect your browser wallet (e.g. MetaMask) to sign multi-party transactions on GenLayer Studionet.</p>
+        <button class="cta" id="wallet-modal-connect" style="width:100%">Connect Wallet</button>
+      </div>
+      <div class="surface" style="margin-top:14px">
+        <div class="section-head"><h2>Studionet Configuration</h2></div>
+        <p class="mono" style="font-size:11px">Chain ID: 61999 (0xF22F)<br/>RPC: https://studio.genlayer.com/api<br/>Explorer: https://explorer-studio.genlayer.com</p>
+      </div>`;
+    $('wallet-modal-connect')?.addEventListener('click', async () => {
+      try {
+        await connectGlobalWallet();
+        openWalletModal();
+      } catch (e) {
+        alert(e.message || 'Connection failed');
+      }
+    });
+  } else {
+    body.innerHTML = `
+      <div class="wallet-detail-grid">
+        <div class="wallet-status-card">
+          <div class="wallet-status-header">
+            <span class="eyebrow">ACTIVE ACCOUNT</span>
+            <span class="pill" style="background:${ws.isStudionet ? 'color-mix(in srgb,var(--accent) 20%,transparent)' : '#ff6b6b33'};color:${ws.isStudionet ? 'var(--accent)' : '#ff8e8e'}">
+              ${ws.isStudionet ? 'Studionet 61999' : 'Wrong Network'}
+            </span>
+          </div>
+          <div class="wallet-address-box">
+            <span class="mono" style="font-weight:700">${esc(ws.address)}</span>
+            <button class="copy-pill-btn" id="copy-wallet-address">Copy</button>
+          </div>
+          <div style="margin-top:10px">
+            <a class="link" href="https://explorer-studio.genlayer.com/address/${esc(ws.address)}" target="_blank" rel="noopener noreferrer">View on GenLayer Explorer ↗</a>
+          </div>
+        </div>
+
+        <div class="surface">
+          <div class="section-head"><h2>Network Integrity</h2></div>
+          <p class="muted">RPC: <code>https://studio.genlayer.com/api</code><br/>Contract: <code class="mono">${esc(ws.contractAddress)}</code></p>
+          ${!ws.isStudionet ? `<p style="color:#ff8e8e;margin-top:8px">Your wallet is connected to Chain ${ws.chainId}. Please switch to Studionet to sign transactions.</p>` : ''}
+        </div>
+
+        <div class="wallet-actions">
+          ${!ws.isStudionet ? `<button class="switch-net-btn" id="wallet-modal-switch">Switch to Studionet</button>` : ''}
+          <button class="cta" id="wallet-modal-onchain" style="flex:1">Open On-Chain Workspace</button>
+          <button class="disconnect-btn" id="wallet-modal-disconnect">Disconnect</button>
+        </div>
+      </div>`;
+    
+    $('copy-wallet-address')?.addEventListener('click', () => {
+      navigator.clipboard?.writeText(ws.address);
+      const btn = $('copy-wallet-address');
+      if (btn) btn.textContent = 'Copied!';
+      setTimeout(() => { if (btn) btn.textContent = 'Copy'; }, 1800);
+    });
+    
+    $('wallet-modal-switch')?.addEventListener('click', async () => {
+      try {
+        await switchOrAddStudionet();
+        openWalletModal();
+      } catch (e) {
+        alert('Failed to switch network: ' + (e.message || e));
+      }
+    });
+    
+    $('wallet-modal-onchain')?.addEventListener('click', () => {
+      modal.hidden = true;
+      nav('On-chain');
+    });
+    
+    $('wallet-modal-disconnect')?.addEventListener('click', () => {
+      disconnectWallet();
+      openWalletModal();
+    });
+  }
+  
+  modal.hidden = false;
+}
+
+subscribeWallet(updateGlobalWalletUI);
 function renderCases(items, emptyMessage='No cases returned from this contract yet.') {
   if (!items.length) return `<div class="blank">${esc(emptyMessage)}</div>`;
   return `<div class="case-list">${items.map(r=>`<div class="case-row" role="button" tabindex="0" data-live-case="${esc(r.id)}"><b>${esc(r.id)}</b><span><b>${esc(r.rule?.slice(0,76)||r.id)}</b><small class="desc">Attestor ${esc(shorten(r.attestor))} · ${esc(r.round || 0)} consensus round(s)</small></span>${badge(r)}<small>${esc(r.consented?'Consented':'Pending consent')}</small></div>`).join('')}</div>`;
@@ -99,7 +344,42 @@ async function detail(id){
     if(!record||record.id!==id)throw new Error('Canonical case ID mismatch');
     const integrity=await verifyAuditHistory(history);
     const a=esc;
-    $('modal-body').innerHTML=`<div class="eyebrow">ON-CHAIN CASE / ${a(id)}</div><h2>${a(record.status||'UNKNOWN')}</h2><div class="detail"><div class="detail-box"><div class="eyebrow">FROZEN POLICY</div><p>${a(record.rule||'Not frozen')}</p><p class="mono">${a(record.rule_hash||'No frozen hash')}</p></div><div class="detail-box"><div class="eyebrow">AUTHORITIES</div><p>Creator: ${a(record.creator)}</p><p>Counterparty: ${a(record.recipient)}</p><p>Attestor: ${a(record.attestor)}</p><p>Consent: ${a(record.consented?'Yes':'No')}</p></div><div class="detail-box"><div class="eyebrow">EVIDENCE</div><p>${a(record.evidence||'No evidence')}</p><p class="mono">${a(record.evidence_hash||'No digest')}</p><small>Source: ${a(record.source_ref||'Not attested')}</small></div><div class="detail-box"><div class="eyebrow">DECISION</div><p>Verdict: ${a(record.result||'Not assessed')}</p><p>Round: ${a(record.round||0)}</p><p>Finalized: ${a(record.finalized_at||'No')}</p><p>Challenges: ${a((record.challenges||[]).length)}</p></div></div><div class="surface"><div class="section-head"><h2>Canonical history</h2><span class="hint">${history.length} entries · ${integrity.valid?'hash links verified':'INTEGRITY FAILURE at entry '+integrity.at}</span></div><pre class="mono" style="white-space:pre-wrap;overflow-wrap:anywhere;max-height:280px;overflow:auto">${a(stringify(history))}</pre></div><p class="footnote">History integrity: ${integrity.valid?'all SHA-256 entry links verified':'FAILED; do not rely on this audit view'}. A designated on-chain attestor proves wallet control, not independently verified identity or real-world document truth. Source SHA-256: ${esc(window.CONTRACT_SOURCE_SHA256||'unavailable')}.</p>`;
+    $('modal-body').innerHTML=`<div class="eyebrow">ON-CHAIN CASE / ${a(id)}</div>
+      <h2>${a(record.status||'UNKNOWN')}</h2>
+      ${renderRoleBanner(record)}
+      ${renderLifecycleStepper(record.status)}
+      <div class="detail">
+        <div class="detail-box"><div class="eyebrow">FROZEN POLICY</div><p>${a(record.rule||'Not frozen')}</p><p class="mono">${a(record.rule_hash||'No frozen hash')}</p></div>
+        <div class="detail-box"><div class="eyebrow">AUTHORITIES</div><p>Creator: ${a(record.creator)}</p><p>Counterparty: ${a(record.recipient)}</p><p>Attestor: ${a(record.attestor)}</p><p>Consent: ${a(record.consented?'Yes':'No')}</p></div>
+        <div class="detail-box"><div class="eyebrow">EVIDENCE</div><p>${a(record.evidence||'No evidence')}</p><p class="mono">${a(record.evidence_hash||'No digest')}</p><small>Source: ${a(record.source_ref||'Not attested')}</small></div>
+        <div class="detail-box"><div class="eyebrow">DECISION</div><p>Verdict: ${a(record.result||'Not assessed')}</p><p>Round: ${a(record.round||0)}</p><p>Finalized: ${a(record.finalized_at||'No')}</p><p>Challenges: ${a((record.challenges||[]).length)}</p></div>
+      </div>
+      ${renderConsensusMatrix(record, history)}
+      <div class="surface" style="margin-top:14px">
+        <div class="section-head"><h2>Canonical history</h2><span class="hint">${history.length} entries · ${integrity.valid?'hash links verified':'INTEGRITY FAILURE at entry '+integrity.at}</span></div>
+        <pre class="mono" style="white-space:pre-wrap;overflow-wrap:anywhere;max-height:280px;overflow:auto">${a(stringify(history))}</pre>
+      </div>
+      <p class="footnote">History integrity: ${integrity.valid?'all SHA-256 entry links verified':'FAILED; do not rely on this audit view'}. A designated on-chain attestor proves wallet control, not independently verified identity or real-world document truth. Source SHA-256: ${esc(window.CONTRACT_SOURCE_SHA256||'unavailable')}.</p>`;
+    
+    $('modal-connect-wallet')?.addEventListener('click', async () => {
+      try {
+        await connectGlobalWallet();
+        detail(id);
+      } catch (err) {
+        alert(err?.message || 'Connection failed');
+      }
+    });
+
+    $('modal-quick-action')?.addEventListener('click', (e) => {
+      const act = e.currentTarget.dataset.action;
+      const cId = e.currentTarget.dataset.case;
+      $('detail-modal').hidden = true;
+      nav('On-chain');
+      setTimeout(() => {
+        if ($('chain-case-id')) $('chain-case-id').value = cId;
+        if ($('chain-action')) $('chain-action').value = act;
+      }, 50);
+    });
   }catch(e){$('modal-body').textContent='Contract case read failed: '+String(e?.message||e)}
 }
 async function probe(){
@@ -122,5 +402,18 @@ document.querySelectorAll('nav button').forEach(e=>e.addEventListener('click',()
 $('primary-action')?.addEventListener('click',()=>nav('On-chain'));
 $('close-unavailable')?.addEventListener('click',()=>{$('unavailable-modal').hidden=true});
 $('close-detail')?.addEventListener('click',()=>{$('detail-modal').hidden=true});
+$('close-wallet-modal')?.addEventListener('click',()=>{$('wallet-modal').hidden=true});
+$('global-wallet-btn')?.addEventListener('click', async () => {
+  const ws = getWalletState();
+  if (!ws.address) {
+    try {
+      await connectGlobalWallet();
+    } catch (err) {
+      alert(err?.message || 'Connection failed');
+    }
+  } else {
+    openWalletModal();
+  }
+});
 const fromHash=decodeURIComponent(location.hash.slice(1)).toLowerCase();
 nav([...APP.view,'On-chain'].find(x=>x.toLowerCase()===fromHash)||'Overview');

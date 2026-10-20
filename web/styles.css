@@ -16,3 +16,60 @@ html,body{max-width:100%;overflow-x:hidden}.main,.surface,.detail-box{min-width:
 .chain-field{display:flex;flex-direction:column;gap:7px;min-width:0;margin:0 0 13px}
 .chain-field .input{width:100%;min-width:0;max-width:100%}
 @media(max-width:650px){.detail{grid-template-columns:minmax(0,1fr)}.sidebar nav .nav-label{display:inline;font-size:11px}.sidebar nav button{flex:0 0 auto;gap:6px;padding:8px 10px}.sidebar nav button .dot{width:auto;font-size:15px}}
+
+/* === High-Tier Web3 Wallet & Portal Additions === */
+.version-tag{display:block;font-size:9px;letter-spacing:.15em;color:var(--accent);font-weight:700;margin-top:2px}
+.network-badge{display:flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--border);border-radius:24px;background:color-mix(in srgb,var(--panel) 80%,transparent);font-size:12px;font-weight:600;color:var(--text);letter-spacing:-.01em}
+.signal-dot{width:8px;height:8px;border-radius:50%;background:#e9b46f;box-shadow:0 0 8px #e9b46f66;transition:all .3s ease}
+.signal-dot.connected{background:#6affd8;box-shadow:0 0 10px #6affd8aa}
+.signal-dot.warning{background:#ff6b6b;box-shadow:0 0 10px #ff6b6baa}
+.wallet-connect-btn{display:flex;align-items:center;gap:8px;padding:9px 18px;border:1px solid var(--accent);border-radius:24px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--text);font-weight:700;font-size:13px;cursor:pointer;transition:all .2s ease}
+.wallet-connect-btn:hover{background:var(--accent);color:var(--back);box-shadow:0 4px 16px color-mix(in srgb,var(--accent) 40%,transparent)}
+.wallet-connect-btn.connected{background:color-mix(in srgb,var(--accent) 18%,transparent);border-color:color-mix(in srgb,var(--accent) 60%,transparent);color:var(--text);font-family:ui-monospace,SFMono-Regular,monospace;font-size:12px}
+.wallet-connect-btn.connected:hover{background:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--text);border-color:var(--accent)}
+.wallet-icon{font-size:15px;color:var(--accent)}
+.wallet-connect-btn:hover .wallet-icon{color:inherit}
+
+/* Wallet Modal Details */
+.wallet-modal-surface{max-width:480px;width:100%;border-radius:18px;padding:24px;background:var(--panel);border:1px solid var(--border);box-shadow:0 24px 64px #000c}
+.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:12px}
+.close-btn{font-size:16px;cursor:pointer;padding:4px 8px;border-radius:6px;border:none;background:none;color:var(--muted)}
+.close-btn:hover{color:var(--text);background:var(--border)}
+.wallet-detail-grid{display:grid;gap:16px}
+.wallet-status-card{background:color-mix(in srgb,var(--back) 60%,transparent);border:1px solid var(--border);border-radius:12px;padding:16px}
+.wallet-status-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.wallet-address-box{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--panel);border:1px solid var(--border);padding:10px 14px;border-radius:8px;margin-top:8px}
+.copy-pill-btn{border:1px solid var(--border);background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--accent);border-radius:6px;padding:4px 10px;font-size:11px;font-weight:700;cursor:pointer}
+.copy-pill-btn:hover{background:var(--accent);color:var(--back)}
+.wallet-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.disconnect-btn{background:color-mix(in srgb,#ff6b6b 15%,transparent);color:#ff8e8e;border:1px solid color-mix(in srgb,#ff6b6b 35%,transparent);padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer;flex:1}
+.disconnect-btn:hover{background:#ff6b6b;color:#fff}
+.switch-net-btn{background:color-mix(in srgb,var(--accent) 20%,transparent);color:var(--accent);border:1px solid var(--accent);padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer;flex:1}
+.switch-net-btn:hover{background:var(--accent);color:var(--back)}
+
+/* Case Visual Lifecycle Stepper */
+.lifecycle-stepper{display:flex;align-items:center;justify-content:space-between;gap:6px;overflow-x:auto;padding:16px 8px;margin:16px 0;background:color-mix(in srgb,var(--back) 50%,transparent);border-radius:12px;border:1px solid var(--border)}
+.step{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;min-width:65px;position:relative;text-align:center}
+.step:not(:last-child)::after{content:'';position:absolute;top:13px;right:-50%;width:100%;height:2px;background:var(--border);z-index:0}
+.step.completed:not(:last-child)::after{background:var(--accent)}
+.step-num{width:26px;height:26px;border-radius:50%;background:var(--panel);border:2px solid var(--border);color:var(--muted);display:grid;place-items:center;font-size:11px;font-weight:800;z-index:1;position:relative}
+.step.active .step-num{background:var(--accent);border-color:var(--accent);color:var(--back);box-shadow:0 0 12px color-mix(in srgb,var(--accent) 60%,transparent)}
+.step.completed .step-num{background:color-mix(in srgb,var(--accent) 25%,transparent);border-color:var(--accent);color:var(--accent)}
+.step-label{font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--muted);text-transform:uppercase}
+.step.active .step-label{color:var(--accent)}
+.step.completed .step-label{color:var(--text)}
+
+/* Consensus AI Fact Vector Matrix */
+.consensus-matrix{margin:16px 0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.consensus-head{display:grid;grid-template-columns:minmax(180px,2fr) 90px 1.5fr;gap:12px;padding:10px 14px;background:color-mix(in srgb,var(--back) 50%,transparent);border-bottom:1px solid var(--border);font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.consensus-row{display:grid;grid-template-columns:minmax(180px,2fr) 90px 1.5fr;gap:12px;padding:12px 14px;border-bottom:1px solid var(--border);align-items:center;font-size:12px}
+.consensus-row:last-child{border-bottom:none}
+.fact-true{display:inline-block;padding:2px 8px;border-radius:12px;background:color-mix(in srgb,#6affd8 20%,transparent);color:#6affd8;font-weight:800;font-size:11px}
+.fact-false{display:inline-block;padding:2px 8px;border-radius:12px;background:color-mix(in srgb,#ff6b6b 20%,transparent);color:#ff8e8e;font-weight:800;font-size:11px}
+.fact-pending{display:inline-block;padding:2px 8px;border-radius:12px;background:color-mix(in srgb,var(--muted) 20%,transparent);color:var(--muted);font-weight:800;font-size:11px}
+
+/* Role Banner in Case Inspector */
+.role-banner{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-radius:10px;margin-bottom:16px;background:color-mix(in srgb,var(--accent) 8%,transparent);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+.role-badge{font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.quick-action-btn{padding:8px 14px;border-radius:8px;background:var(--accent);color:var(--back);font-weight:800;font-size:12px;border:none;cursor:pointer}
+.quick-action-btn:hover{opacity:.9}

@@ -57,6 +57,10 @@ https://parcelcourt-genlayer.vercel.app
 
 Automated adversarial, state-machine, schema, address-compatibility, history-integrity and wallet E2E checks passed. A genuine Chromium wallet signed transaction was reconciled against successful GenVM execution and canonical state. The synthetic full lifecycle finalized UNRESOLVED after both parties challenged. Production registry search/detail verified a two-challenge, two-entry hash-linked history. The public deployment uses the verified V4 contract.
 
+### Steward feedback remediation (2026-10-20)
+
+In response to steward feedback regarding wallet connectivity (*"No wallet connet?"*), a persistent Web3 wallet connect component was integrated across all views, featuring automated EIP-3085 / EIP-3326 network switching to GenLayer Studionet (chain 61999), an account management drawer with GenLayer Explorer links, an 8-stage visual lifecycle progress stepper, an AI consensus fact vector matrix, and multi-party role detection. See [docs/STEWARD_RESPONSE.md](STEWARD_RESPONSE.md) for the complete remediation dossier.
+
 - Exact-main CI: [workflow run 39175259789](https://github.com/GIFTEDLOV/parcelcourt/actions/runs/39175259789) passed for the then-current main commit. The repository Actions history and versioned release provide the exact-HEAD and version-tag qualification results.
 - CI covers Python tests, GenVM lint, ABI/schema, source provenance, security analysis and app SDK/build/browser tests where applicable.
 - No unresolved Critical or High issue was identified in the release audit.
